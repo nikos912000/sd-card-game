@@ -1,4 +1,3 @@
-# on separate lines
 import itertools, random
 
 class Card(object):
@@ -53,7 +52,7 @@ if __name__ == '__main__':
     central['supplement'] = supplement
     central['active'] = []
 
-    # max built-in function
+    # max builtin-in function
     max = central['activeSize']
     count = 0
     while count < max:
@@ -72,10 +71,10 @@ if __name__ == '__main__':
         pO['hand'].append(card)
 
     # pC['handside'] or len(pC['hand'])
-    for x in range(0, pO['handsize']):
+    for x in range(0, pC['handsize']):
         if len(pC['deck']) == 0:
             # random.shuffle(pC['discard'])
-            random.shuffle(pO['discard'])
+            random.shuffle(pC['discard'])
             pC['deck'] = pC['discard']
             pC['discard'] = []
         card = pC['deck'].pop()
@@ -187,7 +186,7 @@ if __name__ == '__main__':
                             if money >= central['supplement'][0].cost:
                                 # bug found, checks index 0 but pop removes last item, use pop(0)
                                 money = money - central['supplement'][0].cost
-                                pO['discard'].append(central['supplement'].pop())
+                                pO['discard'].append(central['supplement'].pop(0))
                                 print "Supplement Bought"
                             else:
                                 print "insufficient money to buy"
@@ -305,8 +304,7 @@ if __name__ == '__main__':
                                 if templist[intindex][1].get_attack() >templist[highestIndex][1].get_attack():
                                     highestIndex = intindex
                             else:
-							    # get_money instead of get_attack
-                                if templist[intindex][1].get_attack() >templist[highestIndex][1].get_money():
+                                if templist[intindex][1].get_money() >templist[highestIndex][1].get_money():
                                     highestIndex = intindex
                     source = templist[highestIndex][0]
                     # replace 5 with activeSize
@@ -318,7 +316,7 @@ if __name__ == '__main__':
                             pC['discard'].append(card)
                             # unnecessary parentheses
                             if( len(central['deck']) > 0):
-                                # no need to store in variable
+                                # no need to store in variab;e
                                 card = central['deck'].pop()
                                 central['active'].append(card)
                             else:
@@ -331,7 +329,7 @@ if __name__ == '__main__':
                         if money >= central['supplement'][0].cost:
                             money = money - central['supplement'][0].cost
                             # pop(0)
-                            card = central['supplement'].pop()
+                            card = central['supplement'].pop(0)
                             pC['discard'].append(card)
                             print "Supplement Bought %s" % card
                         else:

@@ -1,4 +1,5 @@
 import itertools, random
+import sys
 
 class Card(object):
     def __init__(self, name, values=(0, 0), cost=1, clan=None):
@@ -80,39 +81,39 @@ if __name__ == '__main__':
         card = pC['deck'].pop()
         pC['hand'].append(card)
 
-    print "Available Cards"
+    print "Available Cards:"
     for card in central['active']:
         print card
 
-    print "Supplement"
+    print "\nSupplement:"
     if len(central['supplement']) > 0:
         # central['supplement']
         print central['supplement'][0]
 
 
     # (Y) for yes, (N) for No, or even handle Yes, YES etc.
-    pG = raw_input('Do you want to play a game?:')
-    
+    pG = raw_input('\nDo you want to play a game?\nPlease type (Y) for Yes or (N) for No:')
     cG = (pG=='Y')
-    # check if N to exit
-    oT = raw_input("Do you want an aggressive (A) opponent or an acquisative (Q) opponent")
-    aggressive = (oT=='A')
+    
     while cG:
+        # check if N to exit
+        oT = raw_input("\nWOuld you prefer an aggressive (A) opponent or an acquisative (Q) opponent?")
+        aggressive = (oT=='A')
         money = 0
         attack = 0
         while True:
 
-            print "\nPlayer Health %s" % pO['health']
-            print "Computer Health %s" % pC['health']
+            print "\nPlayer Health: %s" % pO['health']
+            print "Computer Health: %s" % pC['health']
 
-            print "\nYour Hand"
+            print "\nYour Hand:"
             # use enumerate or for i in range
             index = 0
             for card in pO['hand']:
                 # fix indentation
                     print "[%s] %s" % (index, card)
                     index = index + 1
-            print "\nYour Values"
+            print "\nYour Values:"
             print "Money %s, Attack %s" % (money, attack)
             print "\nChoose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)"
             # handle invalid input
@@ -147,7 +148,7 @@ if __name__ == '__main__':
                     print card
                 print "\nYour Values"
                 print "Money %s, Attack %s" % (money, attack)
-            if act.isdigit():
+            elif act.isdigit():
                 # handle invalid input (>len()) printing msg
                 # no need for parentheses
                 if( int(act) < len(pO['hand'])):
@@ -169,7 +170,7 @@ if __name__ == '__main__':
                 print "\nYour Values"
                 print "Money %s, Attack %s" % (money, attack)
             # no need for parenthesis 
-            if (act == 'B'):
+            elif (act == 'B'):
                 # if money > 0, while notending... 
                 notending = True
                 while money > 0:
@@ -222,11 +223,11 @@ if __name__ == '__main__':
                         print "Enter a valid option"
 
 
-            if act == 'A':
+            elif act == 'A':
                 # does it count only active area?
                 pC['health'] = pC['health'] - attack
                 attack = 0
-            if act == 'E':
+            elif act == 'E':
                 # no need to check
                 if (len(pO['hand']) >0 ):
                     for x in range(0, len(pO['hand'])):
@@ -247,17 +248,18 @@ if __name__ == '__main__':
                     card = pO['deck'].pop()
                     pO['hand'].append(card)
                 break
-
-        print "Available Cards"
+            else:
+                print 'Invalid option.\nPlease type a valid input!'
+        print "Available Cards:"
         for card in central['active']:
             print card
 
-        print "Supplement"
+        print "Supplement:"
         if len(central['supplement']) > 0:
             print central['supplement'][0]
 
-        print "\nPlayer Health %s" % pO['health']
-        print "Computer Health %s" % pC['health']
+        print "\nPlayer Health: %s" % pO['health']
+        print "Computer Health: %s" % pC['health']
 
         money = 0
         attack = 0
@@ -268,20 +270,20 @@ if __name__ == '__main__':
                         money = money + card.get_money()
                         attack = attack + card.get_attack()
 
-        print " Computer player values attack %s, money %s" % (attack, money)
+        print " Computer player values: attack %s, money %s" % (attack, money)
         print " Computer attacking with strength %s" % attack
         pO['health'] = pO['health'] - attack
         attack = 0
-        print "\nPlayer Health %s" % pO['health']
-        print "Computer Health %s" % pC['health']
+        print "\nPlayer Health: %s" % pO['health']
+        print "Computer Health: %s" % pC['health']
 
-        print " Computer player values attack %s, money %s" % (attack, money)
+        print " Computer player values: attack %s, money %s" % (attack, money)
         print "Computer buying"
         if money > 0:
             cb = True
             templist = []
             # no need to print cb
-            print "Starting Money %s and cb %s " % (money, cb)
+            print "Starting Money: %s " % (money)
             while cb:
                 templist = []
                 if len(central['supplement']) > 0:
@@ -316,7 +318,7 @@ if __name__ == '__main__':
                             pC['discard'].append(card)
                             # unnecessary parentheses
                             if( len(central['deck']) > 0):
-                                # no need to store in variab;e
+                                # no need to store in variable
                                 card = central['deck'].pop()
                                 central['active'].append(card)
                             else:
@@ -482,5 +484,5 @@ if __name__ == '__main__':
                 print "Supplement"
                 if len(central['supplement']) > 0:
                     print central['supplement'][0]
+    print 'Exiting...\nSee you!'
     exit()
-

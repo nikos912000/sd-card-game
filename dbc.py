@@ -1,181 +1,203 @@
-import itertools, random
-import sys
+import itertools
+import random
+
+class Player(object):
+    def __init__(self, name, health = 30, handsize = 5):
+        self.name = name
+        self.health = health
+        self.handsize = handsize
+        self.deck = CardsCollection()
+        self.deck.push(Card('Serf', 0, 1, 0), 8)
+        self.deck.push(Card('Squire', 1, 0, 0), 2)
+        self.hand = CardsCollection()
+        self.active = CardsCollection()
+        self.discard = CardsCollection()
+
+    def initHand(self):
+        for x in range(self.handsize):
+            if (len(self.deck.size) == 0):
+                self.discard.shuffle_collection()
+                self.deck.replace(self.discard)
+                self.discard.clear_collection()
+            card = self.deck.pop()
+            self.hand.push(card)
+                
+    def print_values(self):
+        print "Money %s, Attack %s" % (self.money, self.attack)
 
 class Card(object):
-    def __init__(self, name, values=(0, 0), cost=1, clan=None):
+    def __init__(self, name, attack = 0, money = 0, cost = 1):
         self.name = name
-        self.cost = cost
-        self.values = values
-        # dead code
-        self.clan = clan
+        self.money = money
+        self.attack = attack
+        self.cost = cost      
+        
     def __str__(self):
-                return 'Name %s costing %s with attack %s and money %s' % (self.name, self.cost, self.values[0], self.values[1])
-    def get_attack(self):
-        return self.values[0]
-    def get_money(self):
-            return self.values[1]
-
-
-if __name__ == '__main__':
-    # Player class
-    pO = {'name': 'player one', 'health': 30, 'deck': None, 'hand': None, 'active': None, 'handsize': 5,
-                 'discard': None}
-    pC = {'name': 'player computer', 'health': 30, 'deck': None, 'hand': None, 'active': None, 'handsize': 5,
-               'discard': None}
-    central = {'name': 'central', 'active': None, 'activeSize': 5, 'supplement': None, 'deck': None}
-    # long line
-    sdc = [4 * [Card('Archer', (3, 0), 2)], 4 * [Card('Baker', (0, 3), 2)], 3 * [Card('Swordsman', (4, 0), 3)], 2 * [Card('Knight', (6, 0), 5)],3 * [Card('Tailor', (0, 4), 3)],3 * [Card('Crossbowman', (4, 0), 3)],3 * [Card('Merchant', (0, 5), 4)],4 * [Card('Thug', (2, 0), 1)],4 * [Card('Thief', (1, 1), 1)],2 * [Card('Catapault', (7, 0), 6)], 2 * [Card('Caravan', (1, 5), 5)],2 * [Card('Assassin', (5, 0), 4)]]
-
-    playeronedeck = [8 * [Card('Serf', (0, 1), 0)],
-                     2 * [Card('Squire', (1, 0), 0)]
-                     ]
-    pod = list(itertools.chain.from_iterable(playeronedeck))
-    pO['deck'] = pod
-    pO['hand'] = []
-    pO['discard'] = []
-    pO['active'] = []
-    # same with playeronedeck
-    playertwodeck = [
-            8 * [Card('Serf', (0, 1), 0)],
-        2 * [Card('Squire', (1, 0), 0)]
-    ]
-    ptd = list(itertools.chain.from_iterable(playertwodeck))
-    pC['deck'] = ptd
-    pC['hand'] = []
-    pC['discard'] = []
-    pC['active'] = []
-
-    supplement = 10 * [Card('Levy', (1, 2), 2)]
-    deck = list(itertools.chain.from_iterable(sdc))
-
-    random.shuffle(deck)
-    central['deck'] = deck
-    central['supplement'] = supplement
-    central['active'] = []
-
-    # max builtin-in function
-    max = central['activeSize']
-    count = 0
-    while count < max:
-        card = central['deck'].pop()
-        central['active'].append(card)
-        count = count + 1
-
-    # len(p0['hand'])
-    for x in range(0, pO['handsize']):
-        # no need for parentheses
-        if (len(pO['deck']) == 0):
-            random.shuffle(pO['discard'])
-            pO['deck'] = pO['discard']
-            pO['discard'] = []
-        card = pO['deck'].pop()
-        pO['hand'].append(card)
-
-    # pC['handside'] or len(pC['hand'])
-    for x in range(0, pC['handsize']):
-        if len(pC['deck']) == 0:
-            # random.shuffle(pC['discard'])
-            random.shuffle(pC['discard'])
-            pC['deck'] = pC['discard']
-            pC['discard'] = []
-        card = pC['deck'].pop()
-        pC['hand'].append(card)
-
-    print "Available Cards:"
-    for card in central['active']:
-        print card
-
-    print "\nSupplement:"
-    if len(central['supplement']) > 0:
-        # central['supplement']
-        print central['supplement'][0]
-
-
-    # (Y) for yes, (N) for No, or even handle Yes, YES etc.
-    pG = raw_input('\nDo you want to play a game?\nPlease type (Y) for Yes or (N) for No:')
-    cG = (pG=='Y')
+        return 'Name: %s, costing %s with attack %s and money %s' % (self.name, self.cost, self.attack, self.money)
+        
+class Central(object):
+    def __init__(self, activeSize = 5):
+        self.activeSize = activeSize
+        self.active = CardsCollection()
+        self.deck = CardsCollection()
+        self.supplement = CardsCollection()
+  
+class CardsCollection():
+    def __init__(self):
+        self.cards = []
+        
+    def shuffle_collection(self):
+        random.shuffle(self.cards)    
     
-    while cG:
-        # check if N to exit
-        oT = raw_input("\nWOuld you prefer an aggressive (A) opponent or an acquisative (Q) opponent?")
-        aggressive = (oT=='A')
+    def clear_collection(self):
+        self.cards = []
+    
+    def replace(self, collection):
+        self.cards = collection.cards
+        
+    def push(self, card, times = 1):
+        self.cards[times * card]
+        
+    def pop(self, i=-1):
+        self.cards.pop(i)
+        
+    def size(self):
+        return len(self.cards)
+    
+    def print_collection(self, index = False):
+        if index:
+            for i in range(self.size()):
+                print "[%s] %s" % (i, self.cards[i])
+        else:
+            print '\n'.self.cards
+
+    def print_card(self, idx = 0):
+        print self.cards[idx]
+    
+  
+class DeckGame():
+    def __init__(self):
+        self.player_1 = Player('Player 1')
+        self.player_PC = Player('Player PC')
+        self.central = {'active': None, 'activeSize': 5, 'supplement': None, 'deck': None}
+        
+    def startGame(self):
+        opponent = raw_input("Do you want an aggressive (A) opponent or an acquisative (Q) opponent")
+        self.setUpGame()
+
+        aggressive = (opponent =='A')
+        
         money = 0
         attack = 0
         while True:
 
-            print "\nPlayer Health: %s" % pO['health']
-            print "Computer Health: %s" % pC['health']
+            print "\nPlayer Health %s" % self.player_1.health
+            print "Computer Health %s" % self.player_PC.health
 
-            print "\nYour Hand:"
-            # use enumerate or for i in range
+            print "\nYour Hand"
+            self.player_1.hand.print_collection(indexes = True)
             index = 0
-            for card in pO['hand']:
-                # fix indentation
-                    print "[%s] %s" % (index, card)
-                    index = index + 1
-            print "\nYour Values:"
+            print "\nYour Values"
             print "Money %s, Attack %s" % (money, attack)
             print "\nChoose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)"
-            # handle invalid input
+
             act = raw_input("Enter Action: ")
             print act
-            # function play_all(p0)
-            # or http://stackoverflow.com/questions/11479816/what-is-the-python-equivalent-for-a-case-switch-statement
             if act == 'P':
-                # no need for this statement (for iterates up to len()), no need for parentheses
-                if(len(pO['hand'])>0):
-                    # list modification under iteration, replace with while p0['hand'] (?)
-                    # better to have cards in the right order 
-                    # for i in range(len(a) - 1, -1, -1):
-                    #     card = a.pop(i)
-                    for x in range(0, len(pO['hand'])):
-                        # no need to store to variable
-                        card = pO['hand'].pop()
-                        pO['active'].append(card)
-                        money = money + card.get_money()
-                        attack = attack + card.get_attack()
-
-                # method print_card(list, index=False)
-                print "\nYour Hand"
-                # use enumerate or for i in range
-                index = 0
-                for card in pO['hand']:
-                    print "[%s] %s" % (index, card)
-                    index = index + 1
-
-                print "\nYour Active Cards"
-                for card in pO['active']:
-                    print card
-                print "\nYour Values"
-                print "Money %s, Attack %s" % (money, attack)
+                play_all()
             elif act.isdigit():
-                # handle invalid input (>len()) printing msg
-                # no need for parentheses
-                if( int(act) < len(pO['hand'])):
-                    # could be a method to avoid duplication               
-                    pO['active'].append(pO['hand'].pop(int(act)))
-                    for card in pO['active']:
-                        money = money + card.get_money()
-                        attack = attack + card.get_attack()
-                print "\nYour Hand"
-                # use enumerate or for i in range
-                index = 0
-                for card in pO['hand']:
-                    print "[%s] %s" % (index, card)
-                    index = index + 1
+                index = int(act)
+                play_card(index)
 
-                print "\nYour Active Cards"
-                for card in pO['active']:
-                    print card
-                print "\nYour Values"
-                print "Money %s, Attack %s" % (money, attack)
-            # no need for parenthesis 
-            elif (act == 'B'):
-                # if money > 0, while notending... 
+    def setUpGame(self):
+        
+        init_deck()
+        
+        self.central.deck.shuffle_deck()
+        for i in range(self.central.active.max_size):
+            card = self.central.deck.pop()
+            self.central.active.push(card)
+            
+        self.player_1.initHand()
+        self.player_PC.initHand()
+        
+        print "Available Cards to buy:"
+        self.central.active.print_collection()
+    
+        print "Supplement:"
+        if self.central.supplement.size > 0:
+            print self.central.supplement.print_card(0)
+    
+    def initDeck(self):
+        self.central.deck.push(Card('Archer', 3, 0, 2), 4)
+        self.central.deck.push(Card('Baker', 0, 3, 2), 4)
+        self.central.deck.push(Card('Swordsman', 4, 0, 3), 3)
+        self.central.deck.push(Card('Knight', 6, 0, 5), 2)
+        self.central.deck.push(Card('Tailor', 0, 4, 3), 3)
+        self.central.deck.push(Card('Crossbowman', 4, 0, 3), 3)
+        self.central.deck.push(Card('Merchant', 0, 5, 4), 3)
+        self.central.deck.push(Card('Thug', 2, 0, 1), 4)
+        self.central.deck.push(Card('Thief', 1, 1, 1), 4)
+        self.central.deck.push(Card('Catapault', 7, 0, 6), 2)
+        self.central.deck.push(Card('Caravan', 1, 5, 5), 2)
+        self.central.deck.push(Card('Assassin', 5, 0, 4), 2)    
+  
+    def initSupplement(self):
+        self.supplement.deck.push(Card('Levy', 1, 2, 2), 10)
+  
+    def play_all(self):
+         
+        if(self.player_1.hand.size() > 0):
+            for x in range(self.player1.hand.size()):
+                card = self.player1.hand.pop()
+                self.player1.active.push(card)
+                money = money + card.money
+                attack = attack + card.attack
+
+        print "\nYour Hand"
+        self.player_1.hand.print_collection(indexes = True)
+
+        print "\nYour Active Cards"
+        self.player_1.active.print_collection()
+        print "\nYour Values"
+        self.player_1.print_values()
+        
+    
+    def play_card(self, index):
+        if( index < self.player_1.hand.size()):
+            
+            pO['active'].append(pO['hand'].pop(int(act)))
+            for card in pO['active']:
+                money = money + card.get_money()
+                attack = attack + card.get_attack()
+        print "\nYour Hand"
+        index = 0
+        for card in pO['hand']:
+            print "[%s] %s" % (index, card)
+            index = index + 1
+
+        print "\nYour Active Cards"
+        for card in pO['active']:
+            print card
+        print "\nYour Values"
+        print "Money %s, Attack %s" % (money, attack)
+  
+if __name__ == '__main__':
+
+    pG = raw_input('Do you want to play a game?:')
+    cG = (pG =='Y')
+    while cG:
+        game = DeckGame()
+        game.startGame()
+        
+        
+           
+            
+            if (act == 'B'):
+
                 notending = True
                 while money > 0:
                     print "Available Cards"
-                    # use enumerate or for i in range
                     ind = 0
                     for card in central['active']:
                         print "[%s] %s" % (ind,card)
@@ -185,119 +207,97 @@ if __name__ == '__main__':
                     if bv == 'S':
                         if len(central['supplement']) > 0:
                             if money >= central['supplement'][0].cost:
-                                # bug found, checks index 0 but pop removes last item, use pop(0)
                                 money = money - central['supplement'][0].cost
-                                pO['discard'].append(central['supplement'].pop(0))
+                                pO['discard'].append(central['supplement'].pop())
                                 print "Supplement Bought"
                             else:
                                 print "insufficient money to buy"
                         else:
-                            # handle this
                             print "no supplements left"
                     elif bv == 'E':
                         notending = False
-                        # unnecessary semicolon
                         break;
                     elif bv.isdigit():
                         if int(bv) < len(central['active']):
-                            # wrong indentation
                              if money >= central['active'][int(bv)].cost:
                                 money = money - central['active'][int(bv)].cost
                                 pO['discard'].append(central['active'].pop(int(bv)))
-                                # unnecessary parentheses
                                 if( len(central['deck']) > 0):
-                                    # no need to store to variable (consider cohesion)
                                     card = central['deck'].pop()
                                     central['active'].append(card)
                                 else:
-                                    # no need for activeSize variable
                                     central['activeSize'] = central['activeSize'] - 1
                                 print "Card bought"
                              else:
                                 print "insufficient money to buy"
                         else:
-                            # handle with while
                              print "enter a valid index number"
                     else:
-                        # handle with while
                         print "Enter a valid option"
 
 
-            elif act == 'A':
-                # does it count only active area?
+            if act == 'A':
                 pC['health'] = pC['health'] - attack
                 attack = 0
-            elif act == 'E':
-                # no need to check
+            if act == 'E':
                 if (len(pO['hand']) >0 ):
                     for x in range(0, len(pO['hand'])):
                         pO['discard'].append(pO['hand'].pop())
 
-                # no need to check
+
                 if (len(pO['active']) >0 ):
                     for x in range(0, len(pO['active'])):
                         pO['discard'].append(pO['active'].pop())
-                # replace pO['handsize'] with len(p0['hand'])
-                # why shuffle in every iteration? (inefficient)
                 for x in range(0, pO['handsize']):
                     if len(pO['deck']) == 0:
-                        # check if discard empty?
                         random.shuffle(pO['discard'])
                         pO['deck'] = pO['discard']
                         pO['discard'] = []
                     card = pO['deck'].pop()
                     pO['hand'].append(card)
                 break
-            else:
-                print 'Invalid option.\nPlease type a valid input!'
-        print "Available Cards:"
+
+        print "Available Cards"
         for card in central['active']:
             print card
 
-        print "Supplement:"
+        print "Supplement"
         if len(central['supplement']) > 0:
             print central['supplement'][0]
 
-        print "\nPlayer Health: %s" % pO['health']
-        print "Computer Health: %s" % pC['health']
+        print "\nPlayer Health %s" % pO['health']
+        print "Computer Health %s" % pC['health']
 
         money = 0
         attack = 0
-        # eliminate duplication
         for x in range(0, len(pC['hand'])):
                         card = pC['hand'].pop()
                         pC['active'].append(card)
                         money = money + card.get_money()
                         attack = attack + card.get_attack()
 
-        print " Computer player values: attack %s, money %s" % (attack, money)
+        print " Computer player values attack %s, money %s" % (attack, money)
         print " Computer attacking with strength %s" % attack
         pO['health'] = pO['health'] - attack
         attack = 0
-        print "\nPlayer Health: %s" % pO['health']
-        print "Computer Health: %s" % pC['health']
-
-        print " Computer player values: attack %s, money %s" % (attack, money)
+        print "\nPlayer Health %s" % pO['health']
+        print "Computer Health %s" % pC['health']
+        print " Computer player values attack %s, money %s" % (attack, money)
         print "Computer buying"
         if money > 0:
             cb = True
             templist = []
-            # no need to print cb
-            print "Starting Money: %s " % (money)
+            print "Starting Money %s and cb %s " % (money, cb)
             while cb:
                 templist = []
                 if len(central['supplement']) > 0:
                     if central['supplement'][0].cost <= money:
-                        # append to pC['discard'], pop from central['active']
                         templist.append(("S", central['supplement'][0]))
-                # replace activeSize with len()
                 for intindex in range (0, central['activeSize']):
-                    if central['active'][intindex].cost <= money:             
+                    if central['active'][intindex].cost <= money:
                         templist.append((intindex, central['active'][intindex]))
                 if len(templist) >0:
                     highestIndex = 0
-                    # start from 1
-                    # find index with highest cost at first, then check aggressive etc.
                     for intindex in range(0,len(templist)):
                         if templist[intindex][1].cost > templist[highestIndex][1].cost:
                             highestIndex = intindex
@@ -306,36 +306,29 @@ if __name__ == '__main__':
                                 if templist[intindex][1].get_attack() >templist[highestIndex][1].get_attack():
                                     highestIndex = intindex
                             else:
-                                if templist[intindex][1].get_money() >templist[highestIndex][1].get_money():
+                                if templist[intindex][1].get_attack() >templist[highestIndex][1].get_money():
                                     highestIndex = intindex
                     source = templist[highestIndex][0]
-                    # replace 5 with activeSize
                     if source in range(0,5):
                         if money >= central['active'][int(source)].cost:
                             money = money - central['active'][int(source)].cost
                             card = central['active'].pop(int(source))
                             print "Card bought %s" % card
                             pC['discard'].append(card)
-                            # unnecessary parentheses
                             if( len(central['deck']) > 0):
-                                # no need to store in variable
                                 card = central['deck'].pop()
                                 central['active'].append(card)
                             else:
-                                # no need for this if we have len(central['active'])
                                 central['activeSize'] = central['activeSize'] - 1
                         else:
-                            # this should not happen, check
                             print "Error Occurred"
                     else:
                         if money >= central['supplement'][0].cost:
                             money = money - central['supplement'][0].cost
-                            # pop(0)
-                            card = central['supplement'].pop(0)
+                            card = central['supplement'].pop()
                             pC['discard'].append(card)
                             print "Supplement Bought %s" % card
                         else:
-                            # handle this
                             print "Error Occurred"
                 else:
                     cb = False
@@ -344,14 +337,12 @@ if __name__ == '__main__':
         else:
             print "No Money to buy anything"
 
-        # no need to check
         if (len(pC['hand']) >0 ):
             for x in range(0, len(pC['hand'])):
                 pC['discard'].append(pC['hand'].pop())
         if (len(pC['active']) >0 ):
             for x in range(0, len(pC['active'])):
                 pC['discard'].append(pC['active'].pop())
-        # put to function to eliminate duplication
         for x in range(0, pC['handsize']):
                     if len(pC['deck']) == 0:
                         random.shuffle(pC['discard'])
@@ -373,14 +364,12 @@ if __name__ == '__main__':
         print "\nPlayer Health %s" % pO['health']
         print "Computer Health %s" % pC['health']
 
-        # insert to function print_winner
         if pO['health'] <= 0:
             cG = False
             print "Computer wins"
         elif pC['health'] <= 0:
             cG = False
             print 'Player One Wins'
-        # len(central)   
         elif central['activeSize'] == 0:
             print "No more cards available"
             if pO['health'] > pC['health']:
@@ -388,8 +377,6 @@ if __name__ == '__main__':
             elif pC['health'] > pO['health']:
                 print "Computer Wins"
             else:
-                # pHt = p0['strength'] compute it
-                # pCT = pC['strength'] compute it
                 pHT = 0
                 pCT = 0
                 if pHT > pCT:
@@ -400,7 +387,6 @@ if __name__ == '__main__':
                     print "Draw"
             cG = False
         if not cG:
-            #duplicate, insert to function initialise()
             pG = raw_input("\nDo you want to play another game?:")
             cG = (pG=='Y')
             if cG:
@@ -412,7 +398,6 @@ if __name__ == '__main__':
                 pC = {'name': 'player computer', 'health': 30, 'deck': None, 'hand': None, 'active': None, 'handsize': 5,
                             'discard': None}
                 central = {'name': 'central', 'active': None, 'activeSize': 5, 'supplement': None, 'deck': None}
-                
                 sdc = [
                                 4 * [Card('Archer', (3, 0), 2)],
                                 4 * [Card('Baker', (0, 3), 2)],
@@ -474,7 +459,6 @@ if __name__ == '__main__':
 
 
                 print "Available Cards"
-                # replace with for (for c in central['active']: print c)
                 max = central['activeSize']
                 count = 0
                 while count < max:
@@ -484,5 +468,4 @@ if __name__ == '__main__':
                 print "Supplement"
                 if len(central['supplement']) > 0:
                     print central['supplement'][0]
-    print 'Exiting...\nSee you!'
     exit()

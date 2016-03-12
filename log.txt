@@ -1,0 +1,2184 @@
+Do you want to start a new game?Do you want an aggressive (A) opponent or an acquisative (Q) opponent
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 30
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Squire, costing 0 with attack 1 and money 0
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Archer, costing 2 with attack 3 and money 0
+[2] Name: Crossbowman, costing 3 with attack 4 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Card played:
+Name: Squire, costing 0 with attack 1 and money 0
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 30
+
+Your Values:
+Money 0, Attack 1
+
+Your Hand:
+[0] Name: Squire, costing 0 with attack 1 and money 0
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+Name: Squire, costing 0 with attack 1 and money 0
+
+Available Cards to buy:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Archer, costing 2 with attack 3 and money 0
+[2] Name: Crossbowman, costing 3 with attack 4 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Card played:
+Name: Squire, costing 0 with attack 1 and money 0
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 30
+
+Your Values:
+Money 0, Attack 2
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+
+Available Cards to buy:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Archer, costing 2 with attack 3 and money 0
+[2] Name: Crossbowman, costing 3 with attack 4 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Card played:
+Name: Serf, costing 0 with attack 0 and money 1
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 30
+
+Your Values:
+Money 1, Attack 2
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Archer, costing 2 with attack 3 and money 0
+[2] Name: Crossbowman, costing 3 with attack 4 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Played all cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 30
+
+Your Values:
+Money 3, Attack 2
+
+Your Hand:
+
+Your active area:
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Archer, costing 2 with attack 3 and money 0
+[2] Name: Crossbowman, costing 3 with attack 4 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Available Cards:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Archer, costing 2 with attack 3 and money 0
+[2] Name: Crossbowman, costing 3 with attack 4 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 3, Attack 2
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your Values:
+Money 0, Attack 2
+
+No money left to buy!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 30
+
+Your Values:
+Money 0, Attack 2
+
+Your Hand:
+
+Your active area:
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Archer, costing 2 with attack 3 and money 0
+[1] Name: Crossbowman, costing 3 with attack 4 and money 0
+[2] Name: Swordsman, costing 3 with attack 4 and money 0
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+No cards in active area! 
+Please play cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Archer, costing 2 with attack 3 and money 0
+[1] Name: Crossbowman, costing 3 with attack 4 and money 0
+[2] Name: Swordsman, costing 3 with attack 4 and money 0
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Archer, costing 2 with attack 3 and money 0
+[1] Name: Crossbowman, costing 3 with attack 4 and money 0
+[2] Name: Swordsman, costing 3 with attack 4 and money 0
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 3, Attack 2
+Computer attacking with strength 2...
+
+Health:
+You: 28
+PC: 28
+
+Computer Values:
+Money 3, Attack 0
+Computer buying...
+Starting Money 3
+
+Card bought:
+Name: Crossbowman, costing 3 with attack 4 and money 0
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Archer, costing 2 with attack 3 and money 0
+[1] Name: Swordsman, costing 3 with attack 4 and money 0
+[2] Name: Tailor, costing 3 with attack 0 and money 4
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Archer, costing 2 with attack 3 and money 0
+[1] Name: Swordsman, costing 3 with attack 4 and money 0
+[2] Name: Tailor, costing 3 with attack 0 and money 4
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Played all cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 5, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Archer, costing 2 with attack 3 and money 0
+[1] Name: Swordsman, costing 3 with attack 4 and money 0
+[2] Name: Tailor, costing 3 with attack 0 and money 4
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Available Cards:
+[0] Name: Archer, costing 2 with attack 3 and money 0
+[1] Name: Swordsman, costing 3 with attack 4 and money 0
+[2] Name: Tailor, costing 3 with attack 0 and money 4
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 5, Attack 0
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Archer, costing 2 with attack 3 and money 0
+
+Your Values:
+Money 3, Attack 0
+
+Available Cards:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Merchant, costing 4 with attack 0 and money 5
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 3, Attack 0
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your Values:
+Money 0, Attack 0
+
+No money left to buy!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Caravan, costing 5 with attack 1 and money 5
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Swordsman, costing 3 with attack 4 and money 0
+[3] Name: Squire, costing 0 with attack 1 and money 0
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Caravan, costing 5 with attack 1 and money 5
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 5, Attack 0
+Computer attacking with strength 0...
+
+Health:
+You: 28
+PC: 28
+
+Computer Values:
+Money 5, Attack 0
+Computer buying...
+Starting Money 5
+
+Card bought:
+Name: Caravan, costing 5 with attack 1 and money 5
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Swordsman, costing 3 with attack 4 and money 0
+[3] Name: Squire, costing 0 with attack 1 and money 0
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Swordsman, costing 3 with attack 4 and money 0
+[3] Name: Squire, costing 0 with attack 1 and money 0
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Card played:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 4
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Squire, costing 0 with attack 1 and money 0
+[3] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Card played:
+Name: Squire, costing 0 with attack 1 and money 0
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 28
+
+Your Values:
+Money 0, Attack 5
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+No cards in active area! 
+Please play cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 23
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Played all cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 23
+
+Your Values:
+Money 3, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Available Cards:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 3, Attack 0
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Tailor, costing 3 with attack 0 and money 4
+
+Your Values:
+Money 0, Attack 0
+
+No money left to buy!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 23
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Merchant, costing 4 with attack 0 and money 5
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Catapault, costing 6 with attack 7 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 23
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Squire, costing 0 with attack 1 and money 0
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Merchant, costing 4 with attack 0 and money 5
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Catapault, costing 6 with attack 7 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 5, Attack 0
+Computer attacking with strength 0...
+
+Health:
+You: 28
+PC: 23
+
+Computer Values:
+Money 5, Attack 0
+Computer buying...
+Starting Money 5
+
+Card bought:
+Name: Merchant, costing 4 with attack 0 and money 5
+
+Card bought:
+Name: Thug, costing 1 with attack 2 and money 0
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 23
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Squire, costing 0 with attack 1 and money 0
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 23
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Swordsman, costing 3 with attack 4 and money 0
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Squire, costing 0 with attack 1 and money 0
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Played all cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 23
+
+Your Values:
+Money 3, Attack 5
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+No cards in active area! 
+Please play cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 18
+
+Your Values:
+Money 3, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 3, Attack 0
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Archer, costing 2 with attack 3 and money 0
+
+Your Values:
+Money 1, Attack 0
+
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 1, Attack 0
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+No money left to buy!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 18
+
+Your Values:
+Money 1, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 28
+PC: 18
+
+Your Values:
+Money 1, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Archer, costing 2 with attack 3 and money 0
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Tailor, costing 3 with attack 0 and money 4
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 7, Attack 3
+Computer attacking with strength 3...
+
+Health:
+You: 25
+PC: 18
+
+Computer Values:
+Money 7, Attack 0
+Computer buying...
+Starting Money 7
+
+Card bought:
+Name: Catapault, costing 6 with attack 7 and money 0
+
+Card bought:
+Name: Thug, costing 1 with attack 2 and money 0
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 25
+PC: 18
+
+Your Values:
+Money 1, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Archer, costing 2 with attack 3 and money 0
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Catapault, costing 6 with attack 7 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 25
+PC: 18
+
+Your Values:
+Money 1, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Archer, costing 2 with attack 3 and money 0
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Catapault, costing 6 with attack 7 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Played all cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 25
+PC: 18
+
+Your Values:
+Money 4, Attack 7
+
+Your Hand:
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Archer, costing 2 with attack 3 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Catapault, costing 6 with attack 7 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Catapault, costing 6 with attack 7 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 4, Attack 7
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Baker, costing 2 with attack 0 and money 3
+
+Your Values:
+Money 2, Attack 7
+
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Tailor, costing 3 with attack 0 and money 4
+[3] Name: Catapault, costing 6 with attack 7 and money 0
+[4] Name: Assassin, costing 4 with attack 5 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 2, Attack 7
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Baker, costing 2 with attack 0 and money 3
+
+Your Values:
+Money 0, Attack 7
+
+No money left to buy!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 25
+PC: 18
+
+Your Values:
+Money 0, Attack 7
+
+Your Hand:
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Archer, costing 2 with attack 3 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Catapault, costing 6 with attack 7 and money 0
+[3] Name: Assassin, costing 4 with attack 5 and money 0
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+No cards in active area! 
+Please play cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 25
+PC: 11
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Archer, costing 2 with attack 3 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Catapault, costing 6 with attack 7 and money 0
+[3] Name: Assassin, costing 4 with attack 5 and money 0
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 25
+PC: 11
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Catapault, costing 6 with attack 7 and money 0
+[3] Name: Assassin, costing 4 with attack 5 and money 0
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 7, Attack 12
+Computer attacking with strength 12...
+
+Health:
+You: 13
+PC: 11
+
+Computer Values:
+Money 7, Attack 0
+Computer buying...
+Starting Money 7
+
+Card bought:
+Name: Catapault, costing 6 with attack 7 and money 0
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 13
+PC: 11
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Assassin, costing 4 with attack 5 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 13
+PC: 11
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Assassin, costing 4 with attack 5 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Played all cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 13
+PC: 11
+
+Your Values:
+Money 3, Attack 7
+
+Your Hand:
+
+Your active area:
+Name: Archer, costing 2 with attack 3 and money 0
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Assassin, costing 4 with attack 5 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Assassin, costing 4 with attack 5 and money 0
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 3, Attack 7
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your Values:
+Money 0, Attack 7
+
+No money left to buy!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 13
+PC: 11
+
+Your Values:
+Money 0, Attack 7
+
+Your Hand:
+
+Your active area:
+Name: Archer, costing 2 with attack 3 and money 0
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Assassin, costing 4 with attack 5 and money 0
+[3] Name: Archer, costing 2 with attack 3 and money 0
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+No cards in active area! 
+Please play cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 13
+PC: 4
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Archer, costing 2 with attack 3 and money 0
+Name: Swordsman, costing 3 with attack 4 and money 0
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Assassin, costing 4 with attack 5 and money 0
+[3] Name: Archer, costing 2 with attack 3 and money 0
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 13
+PC: 4
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Squire, costing 0 with attack 1 and money 0
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Assassin, costing 4 with attack 5 and money 0
+[3] Name: Archer, costing 2 with attack 3 and money 0
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 4, Attack 3
+Computer attacking with strength 3...
+
+Health:
+You: 10
+PC: 4
+
+Computer Values:
+Money 4, Attack 0
+Computer buying...
+Starting Money 4
+
+Card bought:
+Name: Assassin, costing 4 with attack 5 and money 0
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 10
+PC: 4
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Squire, costing 0 with attack 1 and money 0
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Archer, costing 2 with attack 3 and money 0
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Merchant, costing 4 with attack 0 and money 5
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 10
+PC: 4
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Tailor, costing 3 with attack 0 and money 4
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Squire, costing 0 with attack 1 and money 0
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Archer, costing 2 with attack 3 and money 0
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Merchant, costing 4 with attack 0 and money 5
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Played all cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 10
+PC: 4
+
+Your Values:
+Money 6, Attack 2
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Tailor, costing 3 with attack 0 and money 4
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Archer, costing 2 with attack 3 and money 0
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Merchant, costing 4 with attack 0 and money 5
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Archer, costing 2 with attack 3 and money 0
+[3] Name: Baker, costing 2 with attack 0 and money 3
+[4] Name: Merchant, costing 4 with attack 0 and money 5
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 6, Attack 2
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Archer, costing 2 with attack 3 and money 0
+
+Your Values:
+Money 4, Attack 2
+
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Archer, costing 2 with attack 3 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 4, Attack 2
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Archer, costing 2 with attack 3 and money 0
+
+Your Values:
+Money 2, Attack 2
+
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Thug, costing 1 with attack 2 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 2, Attack 2
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Thug, costing 1 with attack 2 and money 0
+
+Your Values:
+Money 1, Attack 2
+
+Available Cards:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Thief, costing 1 with attack 1 and money 1
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+
+Your Values:
+Money 1, Attack 2
+
+----------------------------------------
+Choose a card to buy: ([0-n], S for supplement, E to end buying)
+Choose option: 
+Card bought:
+Name: Thief, costing 1 with attack 1 and money 1
+
+Your Values:
+Money 0, Attack 2
+
+No money left to buy!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 10
+PC: 4
+
+Your Values:
+Money 0, Attack 2
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Tailor, costing 3 with attack 0 and money 4
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Knight, costing 5 with attack 6 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+No cards in active area! 
+Please play cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 10
+PC: 2
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+
+Your active area:
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Serf, costing 0 with attack 0 and money 1
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Squire, costing 0 with attack 1 and money 0
+Name: Tailor, costing 3 with attack 0 and money 4
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Knight, costing 5 with attack 6 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 10
+PC: 2
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Tailor, costing 3 with attack 0 and money 4
+[2] Name: Baker, costing 2 with attack 0 and money 3
+[3] Name: Merchant, costing 4 with attack 0 and money 5
+[4] Name: Knight, costing 5 with attack 6 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 8, Attack 2
+Computer attacking with strength 2...
+
+Health:
+You: 8
+PC: 2
+
+Computer Values:
+Money 8, Attack 0
+Computer buying...
+Starting Money 8
+
+Card bought:
+Name: Knight, costing 5 with attack 6 and money 0
+
+Card bought:
+Name: Tailor, costing 3 with attack 0 and money 4
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 8
+PC: 2
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Merchant, costing 4 with attack 0 and money 5
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Crossbowman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 8
+PC: 2
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+[4] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Merchant, costing 4 with attack 0 and money 5
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Crossbowman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+Card played:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 8
+PC: 2
+
+Your Values:
+Money 0, Attack 4
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Merchant, costing 4 with attack 0 and money 5
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Crossbowman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+No cards in active area! 
+Please play cards!
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 8
+PC: -2
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Serf, costing 0 with attack 0 and money 1
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Swordsman, costing 3 with attack 4 and money 0
+
+Your active area:
+Name: Swordsman, costing 3 with attack 4 and money 0
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Merchant, costing 4 with attack 0 and money 5
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Crossbowman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 8
+PC: -2
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Thief, costing 1 with attack 1 and money 1
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Merchant, costing 4 with attack 0 and money 5
+[3] Name: Tailor, costing 3 with attack 0 and money 4
+[4] Name: Crossbowman, costing 3 with attack 4 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+Played all cards!
+
+Computer Values:
+Money 8, Attack 1
+Computer attacking with strength 1...
+
+Health:
+You: 7
+PC: -2
+
+Computer Values:
+Money 8, Attack 0
+Computer buying...
+Starting Money 8
+
+Card bought:
+Name: Merchant, costing 4 with attack 0 and money 5
+
+Card bought:
+Name: Crossbowman, costing 3 with attack 4 and money 0
+
+Card bought:
+Name: Thief, costing 1 with attack 1 and money 1
+Computer turn ending
+
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 7
+PC: -2
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Serf, costing 0 with attack 0 and money 1
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Thief, costing 1 with attack 1 and money 1
+[4] Name: Baker, costing 2 with attack 0 and money 3
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Baker, costing 2 with attack 0 and money 3
+[1] Name: Baker, costing 2 with attack 0 and money 3
+[2] Name: Tailor, costing 3 with attack 0 and money 4
+[3] Name: Crossbowman, costing 3 with attack 4 and money 0
+[4] Name: Thug, costing 1 with attack 2 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+Player One Wins
+Do you want to start a new game?Do you want an aggressive (A) opponent or an acquisative (Q) opponent
+|----------------------------------------|
+|----------------- INFO -----------------|
+|----------------------------------------|
+Health:
+You: 30
+PC: 30
+
+Your Values:
+Money 0, Attack 0
+
+Your Hand:
+[0] Name: Squire, costing 0 with attack 1 and money 0
+[1] Name: Squire, costing 0 with attack 1 and money 0
+[2] Name: Serf, costing 0 with attack 0 and money 1
+[3] Name: Serf, costing 0 with attack 0 and money 1
+[4] Name: Serf, costing 0 with attack 0 and money 1
+
+Your active area:
+
+Available Cards to buy:
+[0] Name: Knight, costing 5 with attack 6 and money 0
+[1] Name: Thug, costing 1 with attack 2 and money 0
+[2] Name: Crossbowman, costing 3 with attack 4 and money 0
+[3] Name: Knight, costing 5 with attack 6 and money 0
+[4] Name: Thug, costing 1 with attack 2 and money 0
+
+Supplement:
+Name: Levy, costing 2 with attack 1 and money 2
+----------------------------------------
+
+----------------------------------------
+Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)
+Enter Action: 

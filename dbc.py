@@ -1,3 +1,4 @@
+import sys
 import random
 
 class Player(object):
@@ -32,18 +33,41 @@ class Player(object):
             self.active.push(card)
             self.money = self.money + card.money
             self.attack = self.attack + card.attack
+        print '\nPlayed all cards!'
             
     def play_card(self, index):
         if( index < self.hand.size()):
             card = self.hand.pop(index)
             self.active.push(card)
-            for card in self.active.cards:
-                self.money = self.money + card.money
-                self.attack = self.attack + card.attack
+            self.money = self.money + card.money
+            self.attack = self.attack + card.attack
+            print '\nCard played:\n%s' % card
+        else:
+            print "\nInvalid index number! Please type a valid number!" 
                 
     def attack_opponent(self, opponent):
         opponent.health = opponent.health - self.attack
         self.attack = 0
+        
+    def buy_supplement(self, central):
+        self.money = self.money - central.supplement.cards[0].cost
+        card = central.supplement.pop()
+        self.discard.push(card)
+        self.strength = self.strength + card.attack
+        print "\nSupplement bought:\n%s" % card
+        
+    def buy_card(self, central, index):
+        self.money = self.money - central.active.cards[index].cost
+        card = central.active.pop(index)
+        self.discard.push(card)
+        self.strength = self.strength + card.attack
+        print "\nCard bought:\n%s" % card
+        
+        if central.deck.size() > 0:
+            card = central.deck.pop()
+            central.active.push(card)
+        else:
+            central.activeSize = self.central.activeSize - 1
                 
     def end_turn(self):
         for _ in range(self.hand.size()):
@@ -118,14 +142,13 @@ class CardsCollection():
 
     def print_card(self, idx = 0):
         print self.cards[idx]
-    
   
 class DeckGame():
     def __init__(self):
         self.player_1 = Player('Player 1')
         self.player_PC = Player('Player PC')
         self.central = Central()
-        
+   
     def start_game(self):
         while True:
             opponent = raw_input("Do you want an aggressive (A) opponent or an acquisative (Q) opponent")
@@ -144,8 +167,8 @@ class DeckGame():
         while not winner:
             while True:
                 self.display_info()
-                
-                print "\nChoose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)"
+                print '\n----------------------------------------'
+                print "Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)"
     
                 act = raw_input("Enter Action: ")
                 if act == 'P':
@@ -258,7 +281,6 @@ class DeckGame():
         print '----------------------------------------'
         
     def buy(self):
-        #notending = True
         while self.player_1.money > 0:
             print "\nAvailable Cards:"
             self.central.active.print_collection(index = True)
@@ -270,60 +292,41 @@ class DeckGame():
             print "\nYour Values:"
             self.player_1.print_values()
             
-            print "\nChoose a card to buy: ([0-n], S for supplement, E to end buying)"
+            print '\n----------------------------------------'
+            print "Choose a card to buy: ([0-n], S for supplement, E to end buying)"
             buy_choice = raw_input("Choose option: ")
             if buy_choice == 'S':
-                self.buy_supplement()
+                if self.central.supplement.size() > 0:
+                    if self.player_1.money > self.central.supplement.cards[0].cost:
+                        self.player_1.buy_supplement(self.central)
+                    else:
+                        print "\nInsufficient money to buy! Please choose another option!"
+                else:
+                    print "\nNo supplements left!"
                 print "\nYour Values:"
                 self.player_1.print_values()
             elif buy_choice == 'E':
-                #notending = False
                 break
             elif buy_choice.isdigit():
-                self.buy_card(int(buy_choice))
+                index = int(buy_choice)
+                if index < self.central.active.size():
+                    if self.player_1.money >= self.central.active.cards[index].cost:
+                        self.player_1.buy_card(self.central, index)                       
+                    else:
+                        print "\nInsufficient money to buy! Please choose another option!"
+                else:
+                    print "\nInvalid index number! Please type a valid number!"
                 print "\nYour Values:"
                 self.player_1.print_values()
             else:
                 print "\nPlease enter a valid option!"
-     
-    def buy_supplement(self):
-        if self.central.supplement.size() > 0:
-            if self.player_1.money > self.central.supplement.cards[0].cost:
-                self.player_1.money = self.player_1.money - self.central.supplement.cards[0].cost
-                card = self.central.supplement.pop()
-                self.player_1.discard.push(card)
-                self.player_1.strength = self.player_1.strength + card.attack
-                print "\nSupplement bought:\n%s" % card
-            else:
-                print "\nInsufficient money to buy! Please choose another option!"
-        else:
-            print "\nNo supplements left!"
-            
-    def buy_card(self, index):
-        if index < self.central.active.size():
-            if self.player_1.money >= self.central.active.cards[index].cost:
-                self.player_1.money = self.player_1.money - self.central.active.cards[index].cost
-                card = self.central.active.pop(index)
-                self.player_1.discard.push(card)
-                self.player_1.strength = self.player_1.strength + card.attack
-                
-                if self.central.deck.size() > 0:
-                    card = self.central.deck.pop()
-                    self.central.active.push(card)
-                else:
-                    self.central.activeSize = self.central.activeSize - 1
-                print "\nCard bought:\n%s" % card
-            else:
-                print "\nInsufficient money to buy! Please choose another option!"
-        else:
-            print "\nInvalid index number! Please type a valid number!"
+        print '\nNo money left to buy!'
                 
     def computer_buys(self):
         if self.player_PC.money > 0:
-            cb = True
             templist = []
             print "Starting Money %s" % self.player_PC.money
-            while cb:
+            while True:
                 templist = []
                 if self.central.supplement.size() > 0:
                     card  = self.central.supplement.cards[0]
@@ -333,6 +336,7 @@ class DeckGame():
                     card = self.central.active.cards[i]
                     if card.cost <= self.player_PC.money:
                         templist.append((i, card))
+                # check if there are possible cards to buy
                 if len(templist) > 0:
                     highest_idx = 0
                     
@@ -346,41 +350,17 @@ class DeckGame():
                             else:
                                 if templist[current_idx][1].money > templist[highest_idx][1].money:
                                     highest_idx = current_idx
-                                    
-                    #if "S"?
+
                     source = templist[highest_idx][0]
                     if source in range(self.central.activeSize):
                         index = int(source)
-                        card = self.central.active.cards[index]
-                        
-                        if self.player_PC.money >= card.cost:
-                            self.player_PC.money = self.player_PC.money - card.cost
-                            card = self.central.active.pop(index)
-                            self.player_PC.discard.push(card)
-                            self.player_PC.strength = self.player_PC.strength + card.attack
-                            print "Card bought:\n%s" % card
-                            
-                            if self.central.deck.size() > 0:
-                                card = self.central.deck.pop()
-                                self.central.active.push(card)
-                            else:
-                                self.central.activeSize = self.central.activeSize - 1
-                        else:
-                            print "Error Occurred"
+                        self.player_PC.buy_card(self.central, index)
                     else:
-                        card = self.central.supplement.cards[0]
-                        if self.player_PC.money >= card.cost:
-                            self.player_PC.money = self.player_PC.money - card.cost
-                            card = self.central.supplement.pop()
-                            self.player_PC.discard.push(card)
-                            self.player_PC.strength = self.player_PC.strength + card.attack
-                            print "Supplement bought\n%s" % card
-                        else:
-                            print "Error Occurred"
+                        self.player_PC.buy_supplement(self.central)
                 else:
-                    cb = False
-                if self.player_PC == 0:
-                    cb = False
+                    break
+                if self.player_PC.money == 0:
+                    break
         else:
             print "No Money to buy anything"
 
@@ -411,11 +391,25 @@ class DeckGame():
                     print "Draw"
             winner = True
         return winner
-  
+    
+class Tee(object):
+    def __init__(self, *files):
+        self.files = files
+    def write(self, obj):
+        for f in self.files:
+            f.write(obj)
+            f.flush() # If you want the output to be visible immediately
+    def flush(self) :
+        for f in self.files:
+            f.flush()
+            
 if __name__ == '__main__':
-
+    f = open('game.log', 'w')
+    original = sys.stdout
+    sys.stdout = Tee(sys.stdout, f)
+    #sys.stdout = log_file
     while True:
-        pG = raw_input('Do you want to play a game?:')
+        pG = raw_input('Do you want to start a new game?')
         if pG.lower() =='y':
             new_game = True
         elif pG.lower() =='n':
@@ -428,5 +422,9 @@ if __name__ == '__main__':
             game.start_game()
         else:
             break
+    
+    sys.stdout = original
+    f.close()
 
     exit()
+    

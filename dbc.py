@@ -338,18 +338,7 @@ class DeckGame():
                         templist.append((i, card))
                 # check if there are possible cards to buy
                 if len(templist) > 0:
-                    highest_idx = 0
-                    
-                    for current_idx in range(len(templist)):
-                        if templist[current_idx][1].cost > templist[highest_idx][1].cost:
-                            highest_idx = current_idx
-                        if templist[current_idx][1].cost == templist[highest_idx][1].cost:
-                            if self.aggressive:
-                                if templist[current_idx][1].attack > templist[highest_idx][1].attack:
-                                    highest_idx = current_idx
-                            else:
-                                if templist[current_idx][1].money > templist[highest_idx][1].money:
-                                    highest_idx = current_idx
+                    highest_idx = self.computer_best_buy(templist)
 
                     source = templist[highest_idx][0]
                     if source in range(self.central.activeSize):
@@ -367,7 +356,26 @@ class DeckGame():
         self.player_PC.end_turn()
                     
         print "Computer turn ending"
-        
+
+    def computer_best_buy(self, templist):
+        highest_idx = 0
+                    
+        for current_idx in range(len(templist)):
+            if self.aggressive:
+                if templist[current_idx][1].attack > templist[highest_idx][1].attack:
+                    highest_idx = current_idx
+                elif templist[current_idx][1].attack == templist[highest_idx][1].attack:
+                    if templist[current_idx][1].cost < templist[highest_idx][1].cost:
+                        highest_idx = current_idx
+            else:
+                if templist[current_idx][1].money > templist[highest_idx][1].money:
+                        highest_idx = current_idx
+                elif templist[current_idx][1].money > templist[highest_idx][1].money:
+                    if templist[current_idx][1].cost < templist[highest_idx][1].cost:
+                        highest_idx = current_idx
+
+        return highest_idx
+    
     def check_winner(self):
         winner = False
         if self.player_1.health <= 0:

@@ -16,7 +16,7 @@ class Player(object):
 
     def init_hand(self):
         for _ in range(self.handsize):
-            if self.deck.size == 0:
+            if self.deck.size() == 0:
                 self.discard.shuffle_collection()
                 self.deck.replace(self.discard)
                 self.discard.clear_collection()
@@ -67,7 +67,7 @@ class Player(object):
             card = central.deck.pop()
             central.active.push(card)
         else:
-            central.activeSize = self.central.activeSize - 1
+            central.activeSize = central.activeSize - 1
                 
     def end_turn(self):
         for _ in range(self.hand.size()):
@@ -370,7 +370,7 @@ class DeckGame():
             else:
                 if templist[current_idx][1].money > templist[highest_idx][1].money:
                         highest_idx = current_idx
-                elif templist[current_idx][1].money > templist[highest_idx][1].money:
+                elif templist[current_idx][1].money == templist[highest_idx][1].money:
                     if templist[current_idx][1].cost < templist[highest_idx][1].cost:
                         highest_idx = current_idx
 

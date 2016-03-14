@@ -3,143 +3,136 @@ import random
 
 class Player(object):
     def __init__(self, name, health = 30, handsize = 5):
-        self.name = name
-        self.health = health
-        self.handsize = handsize
-        self.strength = 0
-        self.money = 0
-        self.attack = 0
-        self.deck = CardsCollection()
-        self.hand = CardsCollection()
-        self.active = CardsCollection()
-        self.discard = CardsCollection()
+        self._name = name
+        self._health = health
+        self._handsize = handsize
+        self._strength = 0
+        self._money = 0
+        self._attack = 0
+        self._deck = CardsCollection()
+        self._hand = CardsCollection()
+        self._active = CardsCollection()
+        self._discard = CardsCollection()
 
     def init_hand(self):
-        for _ in range(self.handsize):
-            if self.deck.size() == 0:
-                self.discard.shuffle_collection()
-                self.deck.replace(self.discard)
-                self.discard.clear_collection()
-            card = self.deck.pop()
-            self.hand.push(card)
+        for _ in range(self._handsize):
+            if self._deck.size() == 0:
+                self._discard.shuffle_collection()
+                self._deck.replace(self.discard)
+                self._discard.clear_collection()
+            card = self._deck.pop()
+            self._hand.push(card)
     
     def init_deck(self):
-        self.deck.push(Card('Serf', 0, 1, 0), 8)
-        self.deck.push(Card('Squire', 1, 0, 0), 2)
+        self._deck.push(Card('Serf', 0, 1, 0), 8)
+        self._deck.push(Card('Squire', 1, 0, 0), 2)
         
     def play_all(self):
-        for _ in range(self.hand.size()):
-            card = self.hand.pop()
-            self.active.push(card)
-            self.money = self.money + card.money
-            self.attack = self.attack + card.attack
+        for _ in range(self._hand.size()):
+            card = self._hand.pop()
+            self._active.push(card)
+            self._money = self._money + card._money
+            self._attack = self._attack + card._attack
         print '\nPlayed all cards!'
             
     def play_card(self, index):
-        if( index < self.hand.size()):
-            card = self.hand.pop(index)
-            self.active.push(card)
-            self.money = self.money + card.money
-            self.attack = self.attack + card.attack
+        if index < self._hand.size():
+            card = self._hand.pop(index)
+            self._active.push(card)
+            self._money = self._money + card._money
+            self._attack = self._attack + card._attack
             print '\nCard played:\n%s' % card
         else:
             print "\nInvalid index number! Please type a valid number!" 
                 
     def attack_opponent(self, opponent):
-        opponent.health = opponent.health - self.attack
-        self.attack = 0
+        opponent._health = opponent._health - self._attack
+        self._attack = 0
         
     def buy_supplement(self, central):
-        self.money = self.money - central.supplement.cards[0].cost
-        card = central.supplement.pop()
-        self.discard.push(card)
-        self.strength = self.strength + card.attack
+        self._money = self._money - central['supplement']._cards[0]._cost
+        card = central['supplement'].pop()
+        self._discard.push(card)
+        self._strength = self._strength + card._attack
         print "\nSupplement bought:\n%s" % card
         
     def buy_card(self, central, index):
-        self.money = self.money - central.active.cards[index].cost
-        card = central.active.pop(index)
-        self.discard.push(card)
-        self.strength = self.strength + card.attack
+        self._money = self._money - central['active']._cards[index]._cost
+        card = central['active'].pop(index)
+        self._discard.push(card)
+        self._strength = self._strength + card._attack
         print "\nCard bought:\n%s" % card
         
-        if central.deck.size() > 0:
-            card = central.deck.pop()
-            central.active.push(card)
+        if central['deck'].size() > 0:
+            card = central['deck'].pop()
+            central['active'].push(card)
                 
     def end_turn(self):
-        for _ in range(self.hand.size()):
-            card = self.hand.pop()
-            self.discard.push(card)
+        for _ in range(self._hand.size()):
+            card = self._hand.pop()
+            self._discard.push(card)
 
-        for _ in range(self.active.size()):
-            card = self.active.pop()
-            self.discard.push(card)
+        for _ in range(self._active.size()):
+            card = self._active.pop()
+            self._discard.push(card)
                 
-        for _ in range(self.handsize):
-            if self.deck.size() == 0:
-                self.discard.shuffle_collection()
-                self.deck.replace(self.discard)
-                self.discard.clear_collection()
-            card = self.deck.pop()
-            self.hand.push(card)
+        for _ in range(self._handsize):
+            if self._deck.size() == 0:
+                self._discard.shuffle_collection()
+                self._deck.replace(self._discard)
+                self._discard.clear_collection()
+            card = self._deck.pop()
+            self._hand.push(card)
                 
     def print_values(self):
-        print "Money %s, Attack %s" % (self.money, self.attack)
+        print "Money %s, Attack %s" % (self._money, self._attack)
     
     def compute_strength(self):
-        for card in self.deck.cards:
-            self.strength = self.strength + card.attack 
+        for card in self._deck._cards:
+            self._strength = self._strength + card._attack 
 
 class Card(object):
     def __init__(self, name, attack = 0, money = 0, cost = 0):
-        self.name = name
-        self.money = money
-        self.attack = attack
-        self.cost = cost      
+        self._name = name
+        self._money = money
+        self._attack = attack
+        self._cost = cost      
         
     def __str__(self):
-        return 'Name: %s, costing %s with attack %s and money %s' % (self.name, self.cost, self.attack, self.money)
-        
-class Central(object):
-    def __init__(self, activeSize = 5):
-        self.activeSize = activeSize
-        self.active = CardsCollection()
-        self.deck = CardsCollection()
-        self.supplement = CardsCollection()
+        return 'Name: %s, costing %s with attack %s and money %s' % (self._name, self._cost, self._attack, self._money)
   
 class CardsCollection():
     def __init__(self):
-        self.cards = []
+        self._cards = []
         
     def shuffle_collection(self):
-        random.shuffle(self.cards)    
+        random.shuffle(self._cards)    
     
     def clear_collection(self):
-        self.cards = []
+        self._cards = []
     
     def replace(self, collection):
-        self.cards = collection.cards
+        self._cards = collection._cards
         
     def push(self, card, times = 1):
-        self.cards.extend(times * [card])
+        self._cards.extend(times * [card])
         
-    def pop(self, i=-1):
-        return self.cards.pop(i)
+    def pop(self, i = -1):
+        return self._cards.pop(i)
         
     def size(self):
-        return len(self.cards)
+        return len(self._cards)
     
     def print_collection(self, index = False):
         if index:
             for i in range(self.size()):
-                print "[%s] %s" % (i, self.cards[i])
+                print "[%s] %s" % (i, self._cards[i])
         else:
             for i in range(self.size()):
-                print self.cards[i]
+                print self._cards[i]
 
     def print_card(self, idx = 0):
-        print self.cards[idx]
+        print self._cards[idx]
 
     
 class Tee(object):

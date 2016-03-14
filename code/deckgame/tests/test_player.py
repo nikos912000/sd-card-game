@@ -1,12 +1,8 @@
 import sys
 import StringIO
-
-"""
-Testing the game
-"""
-
 import unittest
-from dbc import Player, Central, Card, CardsCollection, DeckGame
+
+from deckgame.helper import Player, Central, Card, CardsCollection
 
 class MyTest(unittest.TestCase):
     
@@ -98,86 +94,5 @@ class MyTest(unittest.TestCase):
         self.assertEqual(len(player.deck.cards), 9)
         self.assertEqual(len(player.hand.cards), 5)
         
-    def tet_card_init_(self):
-        card = Card('Levy', 1, 2, 2)
-        self.assertEqual(card.name, 'Levy')
-        self.assertEqual(card.attack, 1)
-        self.assertEqual(card.money, 2)
-        self.assertEqual(card.cost, 2)
-        
-    def test_central_init(self):
-        central = Central()
-        self.assertEqual(central.activeSize, 5)
-        self.assertEqual(central.active.cards, [])
-        self.assertEqual(central.deck.cards, [])
-        self.assertEqual(central.supplement.cards, [])
-        
-    def test_collection_shuffle(self):
-        collection = CardsCollection()
-        collection.push(Card('Archer', 3, 0, 2), 5)
-        collection.push(Card('Deck card', 3, 0, 2), 5)
-        collection.shuffle_collection()
-        self.assertEqual(len(collection.cards), 10)
-        
-    def test_collection_clear(self):
-        collection = CardsCollection()
-        collection.push(Card('Archer', 3, 0, 2), 5)
-        collection.push(Card('Deck card', 3, 0, 2), 5)
-        collection.clear_collection()
-        self.assertEqual(collection.cards, [])
-        
-    def test_collection_replace(self):
-        collection1 = CardsCollection()
-        collection2 = CardsCollection()
-        collection1.push(Card('Archer', 3, 0, 2), 2)
-        collection2.push(Card('Deck card', 3, 0, 2), 3)
-        collection1.replace(collection2)
-        self.assertEqual(collection1.cards, collection2.cards)
-        
-    def test_collection_push(self):
-        collection = CardsCollection()
-        card1 = Card('Archer', 3, 0, 2)
-        card2 = Card('Archer', 1, 2, 1)
-        collection.push(card1, 2)
-        collection.push(card2)
-        temp_list = [card1, card1, card2]
-        self.assertSequenceEqual(collection.cards, temp_list)
-        
-    def test_collection_pop(self):
-        collection = CardsCollection()
-        card1 = Card('Archer', 3, 0, 2)
-        card2 = Card('Test1', 1, 1, 1)
-        card3 = Card('Test2', 1, 2, 1)
-        collection.push(card1, 1)
-        collection.push(card2, 2)
-        collection.push(card3, 1)
-        card_pop = collection.pop()
-        self.assertEqual(card_pop, card3)
-        card_pop = collection.pop(0)
-        self.assertEqual(card_pop, card1)
-        
-    def test_collection_size(self):
-        collection = CardsCollection()
-        self.assertEqual(collection.size(), 0)
-        collection.push(Card('Archer', 3, 0, 5), 2)
-        collection.push(Card('Test1', 1, 1, 1), 3)
-        self.assertEqual(collection.size(), 5)
-        
-    def test_computer_best_buy_aggressive(self):
-        dg = DeckGame()
-        dg.aggressive = True
-        temp_list = [("S", Card('Archer', 2, 1, 2)), (1, Card('Test1', 2, 2, 1)), (3, Card('Test2', 1, 2, 1))]
-        dg.computer_best_buy(temp_list)
-        self.assertEqual(dg.computer_best_buy(temp_list), 1)
-        
-    def test_computer_best_buy_acquisative(self):
-        dg = DeckGame()
-        dg.aggressive = False
-        temp_list = [("S", Card('Archer', 3, 1, 5)), (1, Card('Test1', 1, 3, 3)), (3, Card('Test2', 0, 3, 2))]
-        dg.computer_best_buy(temp_list)
-        self.assertEqual(dg.computer_best_buy(temp_list), 2)
-    
-    
-
     def tearDown(self):
         sys.stdout = self.actualstdout

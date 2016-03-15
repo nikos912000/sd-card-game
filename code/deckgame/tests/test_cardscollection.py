@@ -1,3 +1,7 @@
+"""
+Testing the CardsCollection class.
+"""
+
 import sys
 import StringIO
 import unittest
@@ -5,13 +9,20 @@ import unittest
 from deckgame.helper import Card, CardsCollection
 
 class MyTest(unittest.TestCase):
-
+    """
+    Tests for the CardsCollection class.
+    """
     def setUp(self):
-        # suppress print statements from original code
+        """
+        Suppresses print statements from original code.
+        """
         self.actualstdout = sys.stdout
         sys.stdout = StringIO.StringIO()
 
     def test_collection_shuffle(self):
+        """
+        Tests whether the shuffling results to unexpected results.
+        """
         collection = CardsCollection()
         collection.push(Card('Archer', 3, 0, 2), 5)
         collection.push(Card('Deck card', 3, 0, 2), 5)
@@ -19,6 +30,9 @@ class MyTest(unittest.TestCase):
         self.assertEqual(len(collection.cards), 10)
 
     def test_collection_clear(self):
+        """
+        Tests whether the list is cleared when using the appropriate method.
+        """
         collection = CardsCollection()
         collection.push(Card('Archer', 3, 0, 2), 5)
         collection.push(Card('Deck card', 3, 0, 2), 5)
@@ -26,6 +40,10 @@ class MyTest(unittest.TestCase):
         self.assertEqual(collection.cards, [])
 
     def test_collection_replace(self):
+        """
+        Tests whether collection's content is correctly replaced by that of
+        another -given- collection, when calling the appropriate method.
+        """
         collection1 = CardsCollection()
         collection2 = CardsCollection()
         collection1.push(Card('Archer', 3, 0, 2), 2)
@@ -34,6 +52,10 @@ class MyTest(unittest.TestCase):
         self.assertEqual(collection1.cards, collection2.cards)
 
     def test_collection_push(self):
+        """
+        Tests whether cards are appended successfully and correctly to the
+        list.
+        """
         collection = CardsCollection()
         card1 = Card('Archer', 3, 0, 2)
         card2 = Card('Archer', 1, 2, 1)
@@ -43,6 +65,10 @@ class MyTest(unittest.TestCase):
         self.assertSequenceEqual(collection.cards, temp_list)
 
     def test_collection_pop(self):
+        """
+        Tests whether cards are removed successfully and correctly by the
+        list.
+        """
         collection = CardsCollection()
         card1 = Card('Archer', 3, 0, 2)
         card2 = Card('Test1', 1, 1, 1)
@@ -56,6 +82,10 @@ class MyTest(unittest.TestCase):
         self.assertEqual(card_pop, card1)
 
     def test_collection_size(self):
+        """
+        Tests whether the size of the list returned when calling the
+        appropriate method is the expected one.
+        """
         collection = CardsCollection()
         self.assertEqual(collection.size(), 0)
         collection.push(Card('Archer', 3, 0, 5), 2)
@@ -63,4 +93,7 @@ class MyTest(unittest.TestCase):
         self.assertEqual(collection.size(), 5)
 
     def tearDown(self):
+        """
+        Resets stdout
+        """
         sys.stdout = self.actualstdout

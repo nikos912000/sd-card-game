@@ -1,8 +1,17 @@
+"""
+This module implements the game's logic and is used to play to game.
+"""
 from deckgame.helper import Player, CardsCollection, Card
 
 
 class Game(object):
+    """
+    Simulates a game. This is the main class of the game.
+    """
     def __init__(self):
+        """
+        Initialises the game by adding new players and defining the central area.
+        """
         self.player_1 = Player('Player 1')
         self.player_pc = Player('Player PC')
         self.central = {'deck': CardsCollection(), 'active': CardsCollection(),
@@ -10,6 +19,10 @@ class Game(object):
         self.aggressive = True
 
     def start_game(self):
+        """
+        This is the main method of the game. It plays the game until a winner
+        is identified.
+        """
         self.aggressive = self.get_opponent()
         self.set_up_game()
 
@@ -20,10 +33,12 @@ class Game(object):
             self.player_pc_turn()
             self.display_info()
             winner = self.check_winner()
-        return
 
     @staticmethod
     def get_opponent():
+        """
+        Asks the user for the type of the opponent to be used (aggressive or acquisative).
+        """
         while True:
             opponent = raw_input("Do you want an aggressive (A) or an acquisative (Q) opponent?")
             if opponent.lower() == 'a':
@@ -37,6 +52,11 @@ class Game(object):
                 print "\nPlease give a valid option!"
 
     def set_up_game(self):
+        """
+        Initialises the game by generating the decks and cards needed.
+        It generates the central deck, the pile of supplements, the active
+        area cards and the players' decks and hands.
+        """
         self.init_central_deck()
         self.init_supplement()
 
@@ -55,6 +75,10 @@ class Game(object):
         self.player_pc.init_hand()
 
     def init_central_deck(self):
+        """
+        Initialises the central deck by pushing the predefined cards into the
+        deck.
+        """
         self.central['deck'].push(Card('Archer', 3, 0, 2), 4)
         self.central['deck'].push(Card('Baker', 0, 3, 2), 4)
         self.central['deck'].push(Card('Swordsman', 4, 0, 3), 3)
@@ -69,9 +93,16 @@ class Game(object):
         self.central['deck'].push(Card('Assassin', 5, 0, 4), 2)
 
     def init_supplement(self):
+        """
+        Initialises the supplements pile by pushing the predefined cards into the
+        pile.
+        """
         self.central['supplement'].push(Card('Levy', 1, 2, 2), 10)
 
     def display_info(self):
+        """
+        Displays player's information.
+        """
         print "\n|----------------------------------------|"
         print "|----------------- INFO -----------------|"
         print "|----------------------------------------|"
@@ -83,13 +114,13 @@ class Game(object):
         self.player_1.print_values()
 
         print "\nYour Hand:"
-        self.player_1.hand.print_collection(index=True)
+        self.player_1.hand.print_collection(indexes=True)
 
         print "\nYour active area:"
         self.player_1.active.print_collection()
 
         print "\nAvailable Cards to buy:"
-        self.central['active'].print_collection(index=True)
+        self.central['active'].print_collection(indexes=True)
 
         print "\nSupplement:"
         if self.central['supplement'].size() > 0:
@@ -98,6 +129,11 @@ class Game(object):
         print '----------------------------------------'
 
     def player_1_turn(self):
+        """
+        This method is responsible for player's (player_1) turn. It asks for
+        the action to be taken by printing appropriate messages indicating the
+        valid options and calls the corresponding methods.
+        """
         while True:
             self.display_info()
             print "\n----------------------------------------"
@@ -137,9 +173,15 @@ class Game(object):
 
             if end_turn:
                 break
-        return
 
     def player_1_action(self, valid):
+        """
+        Gets user's choice, validates it and calls the appropriate method to
+        complete the action.
+        
+        :param valid: a list of valid options for user's input
+        :return True: if user decides to end his turn (False otherwise)
+        """
         action = raw_input("Enter Action: ")
         if action not in valid:
             print "\nPlease give a valid option!"
@@ -158,9 +200,14 @@ class Game(object):
         return False
 
     def player_1_buy(self):
+        """
+        This method is responsible for player's (player_1) buy action. It asks for
+        the card to be bought by printing appropriate messages indicating the
+        valid options and calls the corresponding methods.
+        """
         while self.player_1.money > 0:
             print "\nAvailable Cards:"
-            self.central['active'].print_collection(index=True)
+            self.central['active'].print_collection(indexes=True)
 
             print "\nSupplement:"
             if self.central['supplement'].size() > 0:
@@ -198,15 +245,22 @@ class Game(object):
                 break
 
     def player_1_buy_option(self, valid):
+        """
+        Gets user's choice, validates it and calls the appropriate method to
+        complete the action.
+
+        :param valid: a list of valid options for user's input
+        :return True: if user decides to end his buy action (False otherwise)
+        """
         buy_choice = raw_input("Choose option: ")
         if buy_choice not in valid:
             print "\nPlease give a valid option!"
         elif buy_choice == 'S':
-            self.player_1.buy_supplement(self.central)
+            self.player_1.buy_supplement(self.central['supplement'])
         elif buy_choice.isdigit():
             index = int(buy_choice)
             if self.player_1.money >= self.central['active'].cards[index].cost:
-                self.player_1.buy_card(self.central, index)
+                self.player_1.buy_card(self.central['active'], self.central['deck'], index)
             else:
                 print "\nInsufficient money to buy! Please choose another card!"
         elif buy_choice == 'E':
@@ -214,6 +268,9 @@ class Game(object):
         return False
 
     def player_pc_turn(self):
+        """
+        This method is responsible for computers's (player__pc) turn.
+        """
         self.player_pc.play_all()
         print "\nComputer's Turn:"
         print "\nComputer Values:"
@@ -235,6 +292,12 @@ class Game(object):
         print "Computer turn ending"
 
     def computer_buy(self):
+        """
+        This method is responsible for computers's (player__pc) buy action.
+        It creates a list with the cards that could be bought, based on
+        computer's money and calls the appropriate methods in order to find the
+        best choice and to buy the card (if any).
+        """
         while self.player_pc.money > 0:
             templist = []
             if self.central['supplement'].size() > 0:
@@ -252,13 +315,20 @@ class Game(object):
                 source = templist[highest_idx][0]
                 if source in range(self.central['active'].size()):
                     index = int(source)
-                    self.player_pc.buy_card(self.central, index)
+                    self.player_pc.buy_card(self.central['active'], self.central['deck'], index)
                 else:
-                    self.player_pc.buy_supplement(self.central)
+                    self.player_pc.buy_supplement(self.central['supplement'])
             else:
                 break
 
     def computer_best_buy(self, templist):
+        """
+        Finds the best card to buy for the computer player, based on a naive
+        approach and considering its type (aggressive or acquisative).
+
+        :param templist: a list (of tuples) of possible cards to buy
+        :return highest_idx: the index of the best card found in the given list
+        """
         highest_idx = 0
 
         for current_idx in range(len(templist)):
@@ -278,6 +348,12 @@ class Game(object):
         return highest_idx
 
     def check_winner(self):
+        """
+        Check whether there is a winner, based on players' health, strength
+        and on central deck's size.
+
+        :return winner: True if a winner has been found
+        """
         winner = False
         if self.player_1.health <= 0:
             winner = True

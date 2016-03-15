@@ -102,38 +102,38 @@ class Game:
             print "\n----------------------------------------"
 
             if self.player_1.hand.size() > 0 and self.player_1.money > 0 and self.player_1.attack > 0:
-                print "Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)"
+                print "Choose Action: (P = Play All, [0-n] = Play Card, B = Buy Card, A = Attack, E = End Turn)"
                 valid = ['P', 'B', 'A', 'E'] + map(str, range(self.player_1.hand.size()))
                 end_turn = self.player_1_action(valid)
             elif self.player_1.hand.size() > 0 and self.player_1.money > 0:
-                print "Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, E = end turn)"
+                print "Choose Action: (P = Play All, [0-n] = Play Card, B = Buy Card, E = End Turn)"
                 valid = ['P', 'B', 'E'] + map(str, range(self.player_1.hand.size()))
                 end_turn = self.player_1_action(valid)
             elif self.player_1.hand.size() > 0 and self.player_1.attack > 0:
-                print "Choose Action: (P = play all, [0-n] = play that card, A = Attack, E = end turn)"
+                print "Choose Action: (P = Play All, [0-n] = Play Card, A = Attack, E = End Turn)"
                 valid = ['P', 'A', 'E'] + map(str, range(self.player_1.hand.size()))
                 end_turn = self.player_1_action(valid)
             elif self.player_1.money > 0 and self.player_1.attack > 0:
-                print "Choose Action: (B = Buy Card, A = Attack, E = end turn)"
+                print "Choose Action: (B = Buy Card, A = Attack, E = End turn)"
                 valid = ['B', 'A', 'E']
                 end_turn = self.player_1_action(valid)
             elif self.player_1.money > 0:
-                print "Choose Action: (B = Buy Card, E = end turn)"
+                print "Choose Action: (B = Buy Card, E = End Turn)"
                 valid = ['B', 'E']
                 end_turn = self.player_1_action(valid)
             elif self.player_1.attack > 0:
-                print "Choose Action: (A = Attack, E = end turn)"
+                print "Choose Action: (A = Attack, E = End Turn)"
                 valid = ['A', 'E']
                 end_turn = self.player_1_action(valid)
             elif self.player_1.hand.size() > 0:
-                print "Choose Action: (P = play all, [0-n] = play that card, E = end turn)"
+                print "Choose Action: (P = Play All, [0-n] = Play Card, E = End Turn)"
                 valid = ['P', 'E'] + map(str, range(self.player_1.hand.size()))
                 end_turn = self.player_1_action(valid)
             else:
                 print "\nNo more possible actions.\nTurn ending."
                 self.player_1.end_turn()
                 break
-				
+
             if end_turn:
                 break
         return
@@ -153,6 +153,62 @@ class Game:
             self.player_1.attack_opponent(self.player_pc)
         elif action == 'E':
             self.player_1.end_turn()
+            return True
+        return False
+
+    def player_1_buy(self):
+        while self.player_1.money > 0:
+            print "\nAvailable Cards:"
+            self.central['active'].print_collection(index=True)
+
+            print "\nSupplement:"
+            if self.central['supplement'].size() > 0:
+                self.central['supplement'].print_card(0)
+
+            print "\nYour Values:"
+            self.player_1.print_values()
+            
+            buyable_central_cards = any(i.cost <= self.player_1.money for i in self.central['active'].cards)
+            if self.central['supplement'].size() > 0:
+                buyable_supplement = (self.player_1.money >= self.central['supplement'].cards[0].cost)
+            else:
+                buyable_supplement = False    
+
+            print "\n----------------------------------------"
+            if buyable_supplement and buyable_central_cards:
+                print "\nChoose a card to buy: ([0-n] = Buy Card, S = Buy Supplement, E = End Buying)"
+                valid = ['S', 'E'] + map(str, range(self.central['active'].size()))
+                end_buy = self.player_1_buy_option(valid)
+            elif buyable_supplement:
+                print "\nChoose a card to buy: (S = Buy Supplement, E = End Buying)"
+                valid = ['S', 'E']
+                end_buy = self.player_1_buy_option(valid)
+            elif buyable_central_cards > 0:
+                print "\nChoose a card to buy: ([0-n] = Buy Card, E = End Buying)"
+                valid = ['E'] + map(str, range(self.central['active'].size()))
+                end_buy = self.player_1_buy_option(valid)
+            else:
+                print "\nNo possible cards to buy"
+                break
+
+            print "\nYour Values:"
+            self.player_1.print_values()
+            if end_buy:
+                break
+
+    def player_1_buy_option(self, valid):
+        buy_choice = raw_input("Choose option: ")
+        if buy_choice not in valid:
+            print "\nPlease give a valid option!"
+        elif buy_choice == 'S':
+            self.player_1.buy_supplement(self.central)
+        elif buy_choice.isdigit():
+            index = int(buy_choice)
+            if self.player_1.money >= self.central['active'].cards[index].cost:
+                self.player_1.buy_card(self.central, index)
+            else:
+                print "\nInsufficient money to buy! Please choose another card!"
+        elif buy_choice == 'E':
             return True
         return False
 
@@ -177,78 +233,29 @@ class Game:
         self.player_pc.end_turn()
         print "Computer turn ending"
 
-    def player_1_buy(self):
-        while self.player_1.money > 0:
-            print "\nAvailable Cards:"
-            self.central['active'].print_collection(index=True)
-
-            print "\nSupplement:"
-            if self.central['supplement'].size() > 0:
-                self.central['supplement'].print_card(0)
-
-            print "\nYour Values:"
-            self.player_1.print_values()
-
-            print "\n----------------------------------------"
-            print "Choose a card to buy: ([0-n], S for supplement, E to end buying)"
-            buy_choice = raw_input("Choose option: ")
-            if buy_choice == 'S':
-                if self.central['supplement'].size() > 0:
-                    if self.player_1.money >= self.central['supplement'].cards[0].cost:
-                        self.player_1.buy_supplement(self.central)
-                    else:
-                        print "\nInsufficient money to buy! Please choose another option!"
-                else:
-                    print "\nNo supplements left!"
-                print "\nYour Values:"
-                self.player_1.print_values()
-            elif buy_choice == 'E':
-                break
-            elif buy_choice.isdigit():
-                index = int(buy_choice)
-                if index < self.central['active'].size():
-                    if self.player_1.money >= self.central['active'].cards[index].cost:
-                        self.player_1.buy_card(self.central, index)
-                    else:
-                        print "\nInsufficient money to buy! Please choose another option!"
-                else:
-                    print "\nInvalid index number! Please type a valid number!"
-                print "\nYour Values:"
-                self.player_1.print_values()
-            else:
-                print "\nPlease enter a valid option!"
-        print "\nNo money left to buy!"
-
     def computer_buy(self):
-        if self.player_pc.money > 0:
+        while self.player_pc.money > 0:
             templist = []
-            print "Starting Money %s" % self.player_pc.money
-            while True:
-                templist = []
-                if self.central['supplement'].size() > 0:
-                    card = self.central['supplement'].cards[0]
-                    if self.player_pc.money >= card.cost:
-                        templist.append(("S", card))
-                for i in range(self.central['active'].size()):
-                    card = self.central['active'].cards[i]
-                    if self.player_pc.money >= card.cost:
-                        templist.append((i, card))
-                # check if there are possible cards to buy
-                if len(templist) > 0:
-                    highest_idx = self.computer_best_buy(templist)
+            if self.central['supplement'].size() > 0:
+                card = self.central['supplement'].cards[0]
+                if self.player_pc.money >= card.cost:
+                    templist.append(("S", card))
+            for i in range(self.central['active'].size()):
+                card = self.central['active'].cards[i]
+                if self.player_pc.money >= card.cost:
+                    templist.append((i, card))
+            # check if there are possible cards to buy
+            if len(templist) > 0:
+                highest_idx = self.computer_best_buy(templist)
 
-                    source = templist[highest_idx][0]
-                    if source in range(self.central['active'].size()):
-                        index = int(source)
-                        self.player_pc.buy_card(self.central, index)
-                    else:
-                        self.player_pc.buy_supplement(self.central)
+                source = templist[highest_idx][0]
+                if source in range(self.central['active'].size()):
+                    index = int(source)
+                    self.player_pc.buy_card(self.central, index)
                 else:
-                    break
-                if self.player_pc.money == 0:
-                    break
-        else:
-            print "No Money to buy anything"
+                    self.player_pc.buy_supplement(self.central)
+            else:
+                break
 
     def computer_best_buy(self, templist):
         highest_idx = 0

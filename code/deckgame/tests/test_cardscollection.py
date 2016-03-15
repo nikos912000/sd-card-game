@@ -64,3 +64,4 @@ class MyTest(unittest.TestCase):
 
     def tearDown(self):
         sys.stdout = self.actualstdout
+		

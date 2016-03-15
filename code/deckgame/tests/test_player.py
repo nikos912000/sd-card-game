@@ -28,6 +28,16 @@ class MyTest(unittest.TestCase):
         player.init_hand()
         self.assertEqual(len(player._hand._cards), 5)
         
+    def test_player_init_hand_empty_deck(self):
+        player = Player('Nikos')
+        player.init_deck()
+        player._discard.replace(player._deck)
+        player._deck.clear_collection()
+        player.init_hand()
+        self.assertEqual(player._hand.size(), 5)
+        self.assertEqual(player._discard.size(), 0)
+        self.assertNotEqual(player._deck.size(), 0)
+        
     def test_player_play_all(self):
         player = Player('Nikos', health = 20, handsize=5)
         player.init_deck()
@@ -86,12 +96,13 @@ class MyTest(unittest.TestCase):
         # discard pile is shuffled and its cards go to deck
         # new hand with handsize cards is generated from deck
         player = Player('Nikos', handsize = 5)
+        player._hand.push(Card('Archer', 3, 0, 2), 1)
         player._discard.push(Card('Archer', 3, 0, 2), 10)
         player._active.push(Card('Archer', 3, 0, 2), 4)
         player.end_turn()
         self.assertEqual(len(player._active._cards), 0)
         self.assertEqual(len(player._discard._cards), 0)
-        self.assertEqual(len(player._deck._cards), 9)
+        self.assertEqual(len(player._deck._cards), 10)
         self.assertEqual(len(player._hand._cards), 5)
         
     def tearDown(self):

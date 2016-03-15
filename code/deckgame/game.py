@@ -7,82 +7,30 @@ class Game():
         self.central = {'deck': CardsCollection(), 'active': CardsCollection(), 'supplement': CardsCollection(), 'active_size': 5}
    
     def start_game(self):
-        while True:
-            opponent = raw_input("Do you want an aggressive (A) or an acquisative (Q) opponent?")
-            if opponent.lower() =='a':
-                self.aggressive = True
-                break
-            elif opponent.lower() =='q':
-                self.aggressive = False
-                break
-            # check cancel
-            else:
-                print 'Please give a valid option!'
-        
+        self.aggressive = self.get_opponent()
         self.set_up_game()
 
         winner = False
         while not winner:
-            while True:
-                self.display_info()
-                print '\n----------------------------------------'
-                print "Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)"
-    
-                action = raw_input("Enter Action: ")
-                if action == 'P':
-                    if self.player_1._hand.size() > 0:
-                        self.player_1.play_all()
-                    else:
-                        print '\nNo more cards to play!\nPlease choose a valid option!'
-                elif action.isdigit():
-                    if self.player_1._hand.size() > 0:
-                        index = int(action)
-                        self.player_1.play_card(index)
-                    else:
-                        print '\nNo more cards to play!\nPlease choose a valid option!'
-                elif (action == 'B'):
-                    if self.player_1._active.size() > 0:
-                        self.buy()
-                    else:
-                        print '\nNo cards in active area! \nPlease play cards!' 
-                elif action == 'A':
-                    if self.player_1._active.size() > 0:
-                        self.player_1.attack_opponent(self.player_PC)
-                    else:
-                        print '\nNo cards in active area! \nPlease play cards!' 
-                elif action == 'E':
-                    self.player_1.end_turn()
-                    break
-                else:
-                    print "\nPlease give a valid option"
-                
-                if self.player_1._money == 0 and self.player_1._attack == 0 and self.player_1._hand.size() == 0:
-                    print '\nNo more possible actions.\nTurn ending.'
-                    self.player_1.end_turn()
-                    break 
+            self.player_1_turn()
             self.display_info()
-            self.player_PC.play_all()
-    
-            print "\nComputer Values:"
-            self.player_PC.print_values()
-
-            print "Computer attacking with strength %s..." % self.player_PC._attack
-            self.player_PC.attack_opponent(self.player_1)
-            
-            print '\nHealth:'
-            print 'You: %s' % self.player_1._health
-            print 'PC: %s' % self.player_PC._health
-            print "\nComputer Values:"
-            self.player_PC.print_values()
-            
-            print "Computer buying..."
-            self.computer_buys()
-                   
-            self.player_PC.end_turn()
-            print "Computer turn ending"
+            self.player_PC_turn()
             self.display_info()
             winner = self.check_winner()
         return
+    
+    def get_opponent(self):
+        while True:
+            opponent = raw_input("Do you want an aggressive (A) or an acquisative (Q) opponent?")
+            if opponent.lower() =='a':
+                print 'Playing against aggressive opponent'
+                return True
+            elif opponent.lower() =='q':
+                print 'Playing against acquisative opponent'
+                return False
+            # check cancel
+            else:
+                print 'Please give a valid option!'
             
     def set_up_game(self):
         self.init_central_deck()
@@ -145,6 +93,66 @@ class Game():
         
         print '----------------------------------------'
         
+    def player_1_turn(self):
+        while True:
+            self.display_info()
+            print '\n----------------------------------------'
+            print "Choose Action: (P = play all, [0-n] = play that card, B = Buy Card, A = Attack, E = end turn)"
+
+            action = raw_input("Enter Action: ")
+            if action == 'P':
+                if self.player_1._hand.size() > 0:
+                    self.player_1.play_all()
+                else:
+                    print '\nNo more cards to play!\nPlease choose a valid option!'
+            elif action.isdigit():
+                if self.player_1._hand.size() > 0:
+                    index = int(action)
+                    self.player_1.play_card(index)
+                else:
+                    print '\nNo more cards to play!\nPlease choose a valid option!'
+            elif (action == 'B'):
+                if self.player_1._active.size() > 0:
+                    self.buy()
+                else:
+                    print '\nNo cards in active area! \nPlease play cards!' 
+            elif action == 'A':
+                if self.player_1._active.size() > 0:
+                    self.player_1.attack_opponent(self.player_PC)
+                else:
+                    print '\nNo cards in active area! \nPlease play cards!' 
+            elif action == 'E':
+                self.player_1.end_turn()
+                break
+            else:
+                print "\nPlease give a valid option"
+            
+            if self.player_1._money == 0 and self.player_1._attack == 0 and self.player_1._hand.size() == 0:
+                print '\nNo more possible actions.\nTurn ending.'
+                self.player_1.end_turn()
+                break
+            
+    def player_PC_turn(self):
+        self.player_PC.play_all()
+    
+        print "\nComputer Values:"
+        self.player_PC.print_values()
+
+        print "Computer attacking with strength %s..." % self.player_PC._attack
+        self.player_PC.attack_opponent(self.player_1)
+        
+        print '\nHealth:'
+        print 'You: %s' % self.player_1._health
+        print 'PC: %s' % self.player_PC._health
+        print "\nComputer Values:"
+        self.player_PC.print_values()
+        
+        print "Computer buying..."
+        self.computer_buys()
+               
+        self.player_PC.end_turn()
+        print "Computer turn ending"
+        
     def buy(self):
         while self.player_1._money > 0:
             print "\nAvailable Cards:"
@@ -162,7 +170,7 @@ class Game():
             buy_choice = raw_input("Choose option: ")
             if buy_choice == 'S':
                 if self.central['supplement'].size() > 0:
-                    if self.player_1._money > self.central['supplement']._cards[0]._cost:
+                    if self.player_1._money >= self.central['supplement']._cards[0]._cost:
                         self.player_1.buy_supplement(self.central)
                     else:
                         print "\nInsufficient money to buy! Please choose another option!"
@@ -195,11 +203,11 @@ class Game():
                 templist = []
                 if self.central['supplement'].size() > 0:
                     card  = self.central['supplement']._cards[0]
-                    if card._cost <= self.player_PC._money:
+                    if self.player_PC._money >= card._cost:
                         templist.append(("S", card))
                 for i in range(self.central['active'].size()):
                     card = self.central['active']._cards[i]
-                    if card._cost <= self.player_PC._money:
+                    if self.player_PC._money >= card._cost:
                         templist.append((i, card))
                 # check if there are possible cards to buy
                 if len(templist) > 0:

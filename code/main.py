@@ -3,9 +3,9 @@ import sys
 import deckgame as dg
 
 def main():
-    f = open('game.log', 'w')
+    '''f = open('game.log', 'w')
     original = sys.stdout
-    sys.stdout = dg.helper.Tee(sys.stdout, f)
+    sys.stdout = dg.helper.Tee(sys.stdout, f)'''
     #sys.stdout = log_file
     while True:
         pG = raw_input('Do you want to start a new game?')
@@ -22,8 +22,8 @@ def main():
         else:
             break
 
-    sys.stdout = original
-    f.close()
+    '''sys.stdout = original
+    f.close()'''
 
     exit()
 

@@ -18,7 +18,7 @@ class Player(object):
         for _ in range(self._handsize):
             if self._deck.size() == 0:
                 self._discard.shuffle_collection()
-                self._deck.replace(self.discard)
+                self._deck.replace(self._discard)
                 self._discard.clear_collection()
             card = self._deck.pop()
             self._hand.push(card)
@@ -135,7 +135,7 @@ class CardsCollection():
         print self._cards[idx]
 
     
-class Tee(object):
+'''class Tee(object):
     def __init__(self, *files):
         self.files = files
     def write(self, obj):
@@ -144,4 +144,4 @@ class Tee(object):
             f.flush() # If you want the output to be visible immediately
     def flush(self) :
         for f in self.files:
-            f.flush()
+            f.flush()'''

@@ -123,6 +123,8 @@ class Player(object):
                 self._discard.clear_collection()
             card = self._deck.pop()
             self._hand.push(card)
+        self._money = 0
+        self._attack = 0
                 
     def print_values(self):
         print "Money %s, Attack %s" % (self._money, self._attack)
@@ -195,7 +197,7 @@ class CardsCollection():
         print self._cards[idx]
 
     
-class Tee(object):
+'''class Tee(object):
     def __init__(self, *files):
         self.files = files
     def write(self, obj):
@@ -204,4 +206,4 @@ class Tee(object):
             f.flush() # If you want the output to be visible immediately
     def flush(self) :
         for f in self.files:
-            f.flush()
+            f.flush()'''

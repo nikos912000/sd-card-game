@@ -1,2 +1,2 @@
-from deckgame.game import *
-from deckgame.helper import *
+from deckgame.game import Game
+from deckgame.helper import Player, Card, CardsCollection

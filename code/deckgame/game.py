@@ -1,12 +1,13 @@
 from deckgame.helper import Player, CardsCollection, Card
 
 
-class Game:
+class Game(object):
     def __init__(self):
         self.player_1 = Player('Player 1')
         self.player_pc = Player('Player PC')
         self.central = {'deck': CardsCollection(), 'active': CardsCollection(),
                         'supplement': CardsCollection(), 'active_size': 5}
+        self.aggressive = True
 
     def start_game(self):
         self.aggressive = self.get_opponent()
@@ -82,13 +83,13 @@ class Game:
         self.player_1.print_values()
 
         print "\nYour Hand:"
-        self.player_1.hand.print_collection(index = True)
+        self.player_1.hand.print_collection(index=True)
 
         print "\nYour active area:"
         self.player_1.active.print_collection()
 
         print "\nAvailable Cards to buy:"
-        self.central['active'].print_collection(index = True)
+        self.central['active'].print_collection(index=True)
 
         print "\nSupplement:"
         if self.central['supplement'].size() > 0:
@@ -167,12 +168,12 @@ class Game:
 
             print "\nYour Values:"
             self.player_1.print_values()
-            
+
             buyable_central_cards = any(i.cost <= self.player_1.money for i in self.central['active'].cards)
             if self.central['supplement'].size() > 0:
                 buyable_supplement = (self.player_1.money >= self.central['supplement'].cards[0].cost)
             else:
-                buyable_supplement = False    
+                buyable_supplement = False
 
             print "\n----------------------------------------"
             if buyable_supplement and buyable_central_cards:

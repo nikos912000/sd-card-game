@@ -1,6 +1,6 @@
-import sys
-
+#import sys
 import deckgame as dg
+
 
 def main():
     '''f = open('game.log', 'w')
@@ -8,17 +8,17 @@ def main():
     sys.stdout = dg.helper.Tee(sys.stdout, f)'''
     #sys.stdout = log_file
     while True:
-        pG = raw_input('Do you want to start a new game?')
-        if pG.lower() =='y':
-            new_game = True
-        elif pG.lower() =='n':
-            new_game = False
+        new_game = raw_input("Do you want to start a new game?")
+        if new_game.lower() == 'y':
+            start_game = True
+        elif new_game.lower() == 'n':
+            start_game = False
         else:
-            print 'Please give a valid option!'
+            print "Please give a valid option!"
             continue
-        if new_game:
-            cg = dg.game.Game()
-            cg.start_game()
+        if start_game:
+            deck_game = dg.game.Game()
+            deck_game.start_game()
         else:
             break
 
@@ -29,4 +29,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    

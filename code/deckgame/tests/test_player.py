@@ -13,57 +13,57 @@ class MyTest(unittest.TestCase):
     
     def test_player_init_(self):
         player = Player('Nikos', health = 20, handsize=3)
-        self.assertEqual(player._name, 'Nikos')
-        self.assertEqual(player._health, 20)
-        self.assertEqual(player._handsize, 3)
+        self.assertEqual(player.name, 'Nikos')
+        self.assertEqual(player.health, 20)
+        self.assertEqual(player.handsize, 3)
     
     def test_player_init_deck(self):
         player = Player('Nikos')
         player.init_deck()
-        self.assertEqual(player._deck._cards[0]._name, 'Serf')
+        self.assertEqual(player.deck.cards[0].name, 'Serf')
         
     def test_player_init_hand(self):
         player = Player('Nikos')
         player.init_deck()
         player.init_hand()
-        self.assertEqual(len(player._hand._cards), 5)
+        self.assertEqual(len(player.hand.cards), 5)
         
     def test_player_init_hand_empty_deck(self):
         player = Player('Nikos')
         player.init_deck()
-        player._discard.replace(player._deck)
-        player._deck.clear_collection()
+        player.discard.replace(player.deck)
+        player.deck.clear_collection()
         player.init_hand()
-        self.assertEqual(player._hand.size(), 5)
-        self.assertEqual(player._discard.size(), 0)
-        self.assertNotEqual(player._deck.size(), 0)
+        self.assertEqual(player.hand.size(), 5)
+        self.assertEqual(player.discard.size(), 0)
+        self.assertNotEqual(player.deck.size(), 0)
         
     def test_player_play_all(self):
         player = Player('Nikos', health = 20, handsize=5)
         player.init_deck()
         player.init_hand()
         player.play_all()
-        self.assertEqual(len(player._hand._cards), 0)
-        self.assertEqual(len(player._active._cards), 5)
+        self.assertEqual(len(player.hand.cards), 0)
+        self.assertEqual(len(player.active.cards), 5)
         
     def test_player_play_card(self):
         player = Player('Nikos')
         player.init_deck()
         player.init_hand()
         player.play_card(0)
-        self.assertEqual(len(player._hand._cards), 4)
-        self.assertEqual(len(player._active._cards), 1)
+        self.assertEqual(len(player.hand.cards), 4)
+        self.assertEqual(len(player.active.cards), 1)
         player.play_card(6)
-        self.assertEqual(len(player._hand._cards), 4)
-        self.assertEqual(len(player._active._cards), 1)
+        self.assertEqual(len(player.hand.cards), 4)
+        self.assertEqual(len(player.active.cards), 1)
         
     def test_player_attack_opponent(self):
         player_1 = Player('Nikos', health = 30)
         player_PC = Player('Computer', health = 30)
         player_1._attack = 5
         player_1.attack_opponent(player_PC)
-        self.assertEqual(player_PC._health, 25)
-        self.assertEqual(player_1._attack, 0)
+        self.assertEqual(player_PC.health, 25)
+        self.assertEqual(player_1.attack, 0)
     
     def test_player_buy_supplement(self):
         player = Player('Nikos')
@@ -71,39 +71,39 @@ class MyTest(unittest.TestCase):
         central = {'deck': CardsCollection(), 'active': CardsCollection(), 'supplement': CardsCollection(), 'active_size': 5}
         central['supplement'].push(Card('Levy', 1, 2, 2), 10)
         player.buy_supplement(central)
-        self.assertEqual(len(central['supplement']._cards), 9)
-        self.assertEqual(len(player._discard._cards), 1)
-        self.assertEqual(player._money, 0)
+        self.assertEqual(len(central['supplement'].cards), 9)
+        self.assertEqual(len(player.discard.cards), 1)
+        self.assertEqual(player.money, 0)
         
     def test_player_buy_card(self):
         player = Player('Nikos')
-        player.money = 10
+        player._money = 10
         central = {'deck': CardsCollection(), 'active': CardsCollection(), 'supplement': CardsCollection(), 'active_size': 5}
         central['deck'].push(Card('Deck card', 3, 0, 2), 1)
         central['active'].push(Card('Archer', 3, 0, 2), 5)
         player.buy_card(central, 0)
-        self.assertEqual(len(central['active']._cards), 5)
-        self.assertEqual(len(player._discard._cards), 1)
-        self.assertEqual(player._discard._cards[0]._name, 'Archer')
-        self.assertEqual(central['active']._cards[4]._name, 'Deck card')
+        self.assertEqual(len(central['active'].cards), 5)
+        self.assertEqual(len(player.discard.cards), 1)
+        self.assertEqual(player.discard.cards[0].name, 'Archer')
+        self.assertEqual(central['active'].cards[4].name, 'Deck card')
         player.buy_card(central, 0)
         # deck size = 0 now -> no more cards from deck to active area
-        self.assertEqual(len(central['active']._cards), 4)
-        self.assertEqual(len(player._discard._cards), 2)
+        self.assertEqual(len(central['active'].cards), 4)
+        self.assertEqual(len(player.discard.cards), 2)
         
     def test_player_end_turn(self):
         # checks end turn with 0 cards in player's deck
         # discard pile is shuffled and its cards go to deck
         # new hand with handsize cards is generated from deck
         player = Player('Nikos', handsize = 5)
-        player._hand.push(Card('Archer', 3, 0, 2), 1)
-        player._discard.push(Card('Archer', 3, 0, 2), 10)
-        player._active.push(Card('Archer', 3, 0, 2), 4)
+        player.hand.push(Card('Archer', 3, 0, 2), 1)
+        player.discard.push(Card('Archer', 3, 0, 2), 10)
+        player.active.push(Card('Archer', 3, 0, 2), 4)
         player.end_turn()
-        self.assertEqual(len(player._active._cards), 0)
-        self.assertEqual(len(player._discard._cards), 0)
-        self.assertEqual(len(player._deck._cards), 10)
-        self.assertEqual(len(player._hand._cards), 5)
+        self.assertEqual(len(player.active.cards), 0)
+        self.assertEqual(len(player.discard.cards), 0)
+        self.assertEqual(len(player.deck.cards), 10)
+        self.assertEqual(len(player.hand.cards), 5)
         
     def tearDown(self):
         sys.stdout = self.actualstdout

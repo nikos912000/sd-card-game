@@ -16,11 +16,11 @@ class MyTest(unittest.TestCase):
     def test_player_turn(self):
         dg = Game()
         dg.set_up_game()
-        ds = dg.player_1._deck.size()
+        ds = dg.player_1.deck.size()
         with patch('__builtin__.raw_input', side_effect=['C', 'B', 'A', '6', 'P', 'P', 'A', 'B', 'E', 'E']) as _raw_input:
             dg.player_1_turn()
-            self.assertEquals(dg.player_1._hand.size(), 5)
-            self.assertEquals(dg.player_1._deck.size(), ds - 5)
+            self.assertEquals(dg.player_1.hand.size(), 5)
+            self.assertEquals(dg.player_1.deck.size(), ds - 5)
             
     def test_aggressive_opponent(self):
         dg = Game()
@@ -35,9 +35,9 @@ class MyTest(unittest.TestCase):
     def test_set_up_game(self):
         dg = Game()
         dg.set_up_game()
-        self.assertEqual(dg.player_1._deck.size(), dg.player_PC._deck.size())
-        self.assertEqual(dg.player_1._hand.size(), dg.player_1._handsize)
-        self.assertEqual(dg.player_PC._hand.size(), dg.player_PC._handsize)
+        self.assertEqual(dg.player_1.deck.size(), dg.player_PC.deck.size())
+        self.assertEqual(dg.player_1.hand.size(), dg.player_1.handsize)
+        self.assertEqual(dg.player_PC.hand.size(), dg.player_PC.handsize)
         self.assertGreater(dg.central['deck'].size(), 0)
     
     def test_init_central_deck(self):
@@ -50,8 +50,8 @@ class MyTest(unittest.TestCase):
         dg.player_1._money = 6
         dg.central['supplement'].push(Card('Archer', 3, 3, 6))
         with patch('__builtin__.raw_input', return_value='S') as _raw_input:
-            dg.buy()
-            self.assertEqual(dg.player_1._money, 0)
+            dg.player_1_buy()
+            self.assertEqual(dg.player_1.money, 0)
             self.assertEqual(dg.central['supplement'].size(), 0)
             
     def test_buy_card(self):
@@ -59,8 +59,8 @@ class MyTest(unittest.TestCase):
         dg.player_1._money = 3
         dg.central['active'].push(Card('Archer', 2, 2, 3))
         with patch('__builtin__.raw_input', return_value='0') as _raw_input:
-            dg.buy()
-            self.assertEqual(dg.player_1._money, 0)
+            dg.player_1_buy()
+            self.assertEqual(dg.player_1.money, 0)
             self.assertEqual(dg.central['active'].size(), 0)
             
     def test_buy_card_invalid_index(self):
@@ -68,8 +68,8 @@ class MyTest(unittest.TestCase):
         dg.player_1._money = 3
         dg.central['active'].push(Card('Archer', 2, 2, 3))
         with patch('__builtin__.raw_input', side_effect=['1', 'E']) as _raw_input:
-            dg.buy()
-            self.assertEqual(dg.player_1._money, 3)
+            dg.player_1_buy()
+            self.assertEqual(dg.player_1.money, 3)
             self.assertEqual(dg.central['active'].size(), 1)
         
     def test_computer_buys(self):
@@ -80,8 +80,8 @@ class MyTest(unittest.TestCase):
         dg.central['active'].push(Card('Test1', 3, 1, 3))
         dg.central['active'].push(Card('Test2', 0, 4, 3))
         dg.central['supplement'].push(Card('Archer', 3, 3, 6))
-        dg.computer_buys()
-        self.assertEqual(dg.player_PC._discard._cards[0]._name, 'Test1')
+        dg.computer_buy()
+        self.assertEqual(dg.player_PC.discard.cards[0].name, 'Test1')
         
     def test_computer_best_buy_aggressive(self):
         dg = Game()
@@ -101,7 +101,7 @@ class MyTest(unittest.TestCase):
         dg = Game()
         dg.player_1 = Player('Nikos')
         dg.player_PC = Player('Computer')
-        dg.player_1._health = 0
+        dg.player_1_health = 0
         self.assertTrue(dg.check_winner(), 'True expected. Player 1 wins.')
 
     def test_check_winner_player_PC(self):

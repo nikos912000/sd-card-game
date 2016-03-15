@@ -14,6 +14,46 @@ class Player(object):
         self._active = CardsCollection()
         self._discard = CardsCollection()
 
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def health(self):
+        return self._health
+    
+    @property
+    def handsize(self):
+        return self._handsize
+    
+    @property
+    def strength(self):
+        return self._strength
+    
+    @property
+    def money(self):
+        return self._money
+    
+    @property
+    def attack(self):
+        return self._attack
+
+    @property
+    def deck(self):
+        return self._deck
+    
+    @property
+    def hand(self):
+        return self._hand
+    
+    @property
+    def active(self):
+        return self._active
+    
+    @property
+    def discard(self):
+        return self._discard
+
     def init_hand(self):
         for _ in range(self._handsize):
             if self._deck.size() == 0:
@@ -97,13 +137,33 @@ class Card(object):
         self._money = money
         self._attack = attack
         self._cost = cost      
-        
+    
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def money(self):
+        return self._money
+    
+    @property
+    def attack(self):
+        return self._attack
+    
+    @property
+    def cost(self):
+        return self._cost
+    
     def __str__(self):
         return 'Name: %s, costing %s with attack %s and money %s' % (self._name, self._cost, self._attack, self._money)
   
 class CardsCollection():
     def __init__(self):
         self._cards = []
+        
+    @property
+    def cards(self):
+        return self._cards
         
     def shuffle_collection(self):
         random.shuffle(self._cards)    
@@ -135,7 +195,7 @@ class CardsCollection():
         print self._cards[idx]
 
     
-'''class Tee(object):
+class Tee(object):
     def __init__(self, *files):
         self.files = files
     def write(self, obj):
@@ -144,4 +204,4 @@ class CardsCollection():
             f.flush() # If you want the output to be visible immediately
     def flush(self) :
         for f in self.files:
-            f.flush()'''
+            f.flush()

@@ -16,14 +16,14 @@ class MyTest(unittest.TestCase):
         collection.push(Card('Archer', 3, 0, 2), 5)
         collection.push(Card('Deck card', 3, 0, 2), 5)
         collection.shuffle_collection()
-        self.assertEqual(len(collection._cards), 10)
+        self.assertEqual(len(collection.cards), 10)
         
     def test_collection_clear(self):
         collection = CardsCollection()
         collection.push(Card('Archer', 3, 0, 2), 5)
         collection.push(Card('Deck card', 3, 0, 2), 5)
         collection.clear_collection()
-        self.assertEqual(collection._cards, [])
+        self.assertEqual(collection.cards, [])
         
     def test_collection_replace(self):
         collection1 = CardsCollection()
@@ -31,7 +31,7 @@ class MyTest(unittest.TestCase):
         collection1.push(Card('Archer', 3, 0, 2), 2)
         collection2.push(Card('Deck card', 3, 0, 2), 3)
         collection1.replace(collection2)
-        self.assertEqual(collection1._cards, collection2._cards)
+        self.assertEqual(collection1.cards, collection2.cards)
         
     def test_collection_push(self):
         collection = CardsCollection()
@@ -40,7 +40,7 @@ class MyTest(unittest.TestCase):
         collection.push(card1, 2)
         collection.push(card2)
         temp_list = [card1, card1, card2]
-        self.assertSequenceEqual(collection._cards, temp_list)
+        self.assertSequenceEqual(collection.cards, temp_list)
         
     def test_collection_pop(self):
         collection = CardsCollection()

@@ -1,5 +1,7 @@
-Software Development Assignment
+Deck Building Card Game 
 -------------------------------
+[![Build Status](https://travis-ci.com/nikos912000/sd-card-game.svg?token=zU6ptnBBwDGu1jzbrQNz&branch=master)](https://travis-ci.com/nikos912000/sd-card-game)
+
 Final version of the Deck Building Card game. 
 
 This assignment has been completed under the "Software Development" course at the University of Edinburgh.

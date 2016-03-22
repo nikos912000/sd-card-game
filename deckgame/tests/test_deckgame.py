@@ -7,7 +7,7 @@ import StringIO
 import unittest
 from mock import patch
 
-from deckgame.helper import Player, Card, CardsCollection
+from deckgame.helper import Player, Card
 from deckgame.game import Game
 
 class MyTest(unittest.TestCase):
@@ -143,7 +143,7 @@ class MyTest(unittest.TestCase):
         deck_game.computer_buy()
         self.assertEqual(deck_game.player_pc.discard.cards[0].name, 'Test1')
 
-    def test_computer_best_buy_aggressive(self):
+    def test_best_buy_aggressive(self):
         """
         Tests the computer_best_buy method for an aggressive opponent.
         The index returned should abide by the implemented logic.
@@ -156,7 +156,7 @@ class MyTest(unittest.TestCase):
         deck_game.computer_best_buy(temp_list)
         self.assertEqual(deck_game.computer_best_buy(temp_list), 1)
 
-    def test_computer_best_buy_acquisative(self):
+    def test_best_buy_acquisative(self):
         """
         Tests the computer_best_buy method for an acquisative opponent.
         The index returned should abide by the implemented logic.

@@ -1,14 +1,16 @@
+"""
+Main script that starts a new game.
+"""
 #import sys
 import deckgame as dg
 
 
 def main():
-    '''f = open('game.log', 'w')
-    original = sys.stdout
-    sys.stdout = dg.helper.Tee(sys.stdout, f)'''
-    #sys.stdout = log_file
+    """
+    Starts a new game.
+    """
     while True:
-        new_game = raw_input("Do you want to start a new game?")
+        new_game = raw_input("Do you want to start a new game (Y for Yes, N for No)?")
         if new_game.lower() == 'y':
             start_game = True
         elif new_game.lower() == 'n':
@@ -21,10 +23,6 @@ def main():
             deck_game.start_game()
         else:
             break
-
-    '''sys.stdout = original
-    f.close()'''
-
     exit()
 
 if __name__ == '__main__':

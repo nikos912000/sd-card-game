@@ -181,7 +181,7 @@ class Player(object):
 
         :param supplement: a list of available supplements
         """
-        self._money = self._money - supplement.cards[0].cost
+        self._money = self._money - supplement.cards[supplement.size() - 1].cost
         card = supplement.pop()
         self._discard.push(card)
         self._strength = self._strength + card.attack
@@ -394,14 +394,3 @@ class CardsCollection(object):
         :param index: the index of the card in the collection
         """
         print self._cards[index]
-
-'''class Tee(object):
-    def __init__(self, *files):
-        self.files = files
-    def write(self, obj):
-        for f in self.files:
-            f.write(obj)
-            f.flush() # If you want the output to be visible immediately
-    def flush(self) :
-        for f in self.files:
-            f.flush()'''

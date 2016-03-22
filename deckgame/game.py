@@ -31,7 +31,6 @@ class Game(object):
             self.player_1_turn()
             self.display_info()
             self.player_pc_turn()
-            self.display_info()
             winner = self.check_winner()
 
     @staticmethod
@@ -106,9 +105,14 @@ class Game(object):
         print "\n|----------------------------------------|"
         print "|----------------- INFO -----------------|"
         print "|----------------------------------------|"
+
         print 'Health:'
         print 'You: %s' % self.player_1.health
         print 'PC: %s' % self.player_pc.health
+
+        print 'Strength:'
+        print 'You: %s' % self.player_1.strength
+        print 'PC: %s' % self.player_pc.strength
 
         print "\nYour Values:"
         self.player_1.print_values()
@@ -123,8 +127,9 @@ class Game(object):
         self.central['active'].print_collection(indexes=True)
 
         print "\nSupplement:"
-        if self.central['supplement'].size() > 0:
-            self.central['supplement'].print_card(0)
+        supplement_size = self.central['supplement'].size()
+        if supplement_size > 0:
+            self.central['supplement'].print_card(supplement_size - 1)
 
         print '----------------------------------------'
 
@@ -178,7 +183,7 @@ class Game(object):
         """
         Gets user's choice, validates it and calls the appropriate method to
         complete the action.
-        
+
         :param valid: a list of valid options for user's input
         :return True: if user decides to end his turn (False otherwise)
         """
@@ -210,15 +215,17 @@ class Game(object):
             self.central['active'].print_collection(indexes=True)
 
             print "\nSupplement:"
-            if self.central['supplement'].size() > 0:
-                self.central['supplement'].print_card(0)
+            supplement_size = self.central['supplement'].size()
+            if supplement_size > 0:
+                self.central['supplement'].print_card(supplement_size - 1)
 
             print "\nYour Values:"
             self.player_1.print_values()
 
             buyable_central_cards = any(i.cost <= self.player_1.money for i in self.central['active'].cards)
-            if self.central['supplement'].size() > 0:
-                buyable_supplement = (self.player_1.money >= self.central['supplement'].cards[0].cost)
+            if supplement_size > 0:
+                buyable_supplement = (self.player_1.money >=
+                                      self.central['supplement'].cards[supplement_size - 1].cost)
             else:
                 buyable_supplement = False
 
@@ -282,6 +289,11 @@ class Game(object):
         print '\nHealth:'
         print "You: %s" % self.player_1.health
         print "PC: %s" % self.player_pc.health
+
+        print 'Strength:'
+        print 'You: %s' % self.player_1.strength
+        print 'PC: %s' % self.player_pc.strength
+
         print "\nComputer Values:"
         self.player_pc.print_values()
 
@@ -300,8 +312,9 @@ class Game(object):
         """
         while self.player_pc.money > 0:
             templist = []
-            if self.central['supplement'].size() > 0:
-                card = self.central['supplement'].cards[0]
+            supplement_size = self.central['supplement'].size()
+            if supplement_size > 0:
+                card = self.central['supplement'].cards[supplement_size - 1]
                 if self.player_pc.money >= card.cost:
                     templist.append(("S", card))
             for i in range(self.central['active'].size()):
